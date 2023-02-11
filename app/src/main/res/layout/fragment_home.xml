@@ -1,29 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/ivMeal1"
+        android:layout_width="match_parent"
+        android:layout_height="411dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-67dp"
+        android:layout_marginEnd="0dp"
+        android:contentDescription="@string/ivMeal1"
+        app:srcCompat="@drawable/meal" />
+
+    <ImageView
+        android:id="@+id/ivMeal2"
+        android:layout_width="match_parent"
+        android:layout_height="366dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="75dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/ivMeal2"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/meal2" />
+
     <TextView
         android:id="@+id/tvIntroductionLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="362dp"
+        android:layout_height="353dp"
+        android:layout_alignStart="@id/ivMeal1"
+        android:layout_alignTop="@id/ivMeal1"
+        android:layout_alignEnd="@id/ivMeal1"
+        android:layout_alignBottom="@id/ivMeal1"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="103dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
         android:text="@string/tvIntroductionLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvNavigationLabel"
-        android:layout_width="320dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="120dp"
+        android:layout_width="362dp"
+        android:layout_height="353dp"
+        android:layout_alignStart="@id/ivMeal2"
+        android:layout_alignTop="@id/ivMeal2"
+        android:layout_alignEnd="@id/ivMeal2"
+        android:layout_alignBottom="@id/ivMeal2"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
         android:text="@string/tvNavigationLabel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
