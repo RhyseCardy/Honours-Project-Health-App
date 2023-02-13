@@ -6,7 +6,14 @@
     <string name="tvNavigationLabel">Please select an icon from the bottom of the screen to navigate around the application</string>
     <string name="ivMeal1">Image of Meal 1</string>
     <string name="ivMeal2">Image of Meal 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <!-- Bottom Navigation -->
+    <string name="miBottomNavHome">Home</string>
+    <string name="miBottomNavSearch">Search</string>
+    <string name="miBottomNavUserList">User List</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

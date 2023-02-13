@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/foodSelectionFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.FoodSelectionFragment"
+        android:label="fragment_food_selection"
+        tools:layout="@layout/fragment_food_selection" />
+    <fragment
+        android:id="@+id/userFoodListFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.UserFoodListFragment"
+        android:label="fragment_user_food_list"
+        tools:layout="@layout/fragment_user_food_list" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/barcodeScannerFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.BarcodeScannerFragment"
+        android:label="fragment_barcode_scanner"
+        tools:layout="@layout/fragment_barcode_scanner" />
+    <fragment
+        android:id="@+id/foodInfoFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.FoodInfoFragment"
+        android:label="fragment_food_info"
+        tools:layout="@layout/fragment_food_info" >
+        <action
+            android:id="@+id/action_foodInfoFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodListFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.FoodListFragment"
+        android:label="fragment_food_list"
+        tools:layout="@layout/fragment_food_list" />
 </navigation>
