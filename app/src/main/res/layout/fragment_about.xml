@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF0CB"
     tools:context=".AboutFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvAppCollectInfoLabel"
+        android:layout_width="263dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/yellow_border"
+        android:gravity="center"
+        android:text="@string/tvAppCollectInfoLabel"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAppCollectInfoAnswerLabel"
+        android:layout_width="362dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
+        android:text="@string/tvAppCollectInfoAnswerLabel"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppCollectInfoLabel" />
+
+    <TextView
+        android:id="@+id/tvNutritScoreLabel"
+        android:layout_width="225dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/yellow_border"
+        android:gravity="center"
+        android:text="@string/tvNutritScoreLabel"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppCollectInfoAnswerLabel" />
+
+    <TextView
+        android:id="@+id/tvNutritScoreAnswerLabel"
+        android:layout_width="385dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
+        android:text="@string/tvNutritScoreAnswerLabel"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNutritScoreLabel" />
+
+    <TextView
+        android:id="@+id/tvNovaScoreLabel"
+        android:layout_width="228dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/yellow_border"
+        android:gravity="center"
+        android:text="@string/tvNovaScoreLabel"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNutritScoreAnswerLabel" />
+
+    <TextView
+        android:id="@+id/tvNovaScoreAnswer1Label"
+        android:layout_width="409dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
+        android:text="@string/tvNovaScoreAnswer1Label"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNovaScoreLabel" />
+
+    <TextView
+        android:id="@+id/tvNovaScoreAnswer2Label"
+        android:layout_width="405dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
+        android:text="@string/tvNovaScoreAnswer2Label"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNovaScoreAnswer1Label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

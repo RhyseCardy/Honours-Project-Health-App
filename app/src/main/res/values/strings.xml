@@ -14,6 +14,43 @@
     <string name="miBottomNavUserList">User List</string>
 
 
+    <!-- About Fragment -->
+    <string name="tvAppCollectInfoLabel">How does the app collect its data?</string>
+    <string name="tvAppCollectInfoAnswerLabel">By connecting to the ‘Open Food Facts’ dataset, all the relevant information is sent to the application.</string>
+    <string name="tvNutritScoreLabel">What is the “Nutrition Score”?</string>
+    <string name="tvNutritScoreAnswerLabel">The Nutrition Score (or Nutri-Score) is a quick and easy method of checking and comparing the nutritional quality of the products, ranging from a healthy A to a unhealthy E. </string>
+    <string name="tvNovaScoreLabel">What is the “NOVA Score”?</string>
+    <string name="tvNovaScoreAnswer1Label">the NOVA Score of products is used to inform users on how much the food was processed before it was released to the store. </string>
+    <string name="tvNovaScoreAnswer2Label">The score ranges from a minimally processed score of 1, to a highly processed score of 4</string>
+
+
+    <!-- Food Selection Fragment -->
+    <string name="tvSearchQuestionLabel">Search Food Items</string>
+    <string name="tvOrLabel">OR,</string>
+    <string name="tvSearchBarcodeScannerLabel">You Can Search Food Items Using A Barcode Scanner</string>
+    <string name="etEnterFoodItem">Enter Food Item...</string>
+    <string name="btnGoToBarcodeScanner">Go To Barcode Scanner</string>
+
+
+    <!-- Food Info Fragment -->
+<!--    <string name="miBottomNavHome">Home</string>    -->
+<!--    <string name="miBottomNavSearch">Search</string>    -->
+<!--    <string name="miBottomNavUserList">User List</string>   -->
+
+
+    <!-- Food List Fragment -->
+<!--    <string name="miBottomNavHome">Home</string>    -->
+<!--    <string name="miBottomNavSearch">Search</string>    -->
+<!--    <string name="miBottomNavUserList">User List</string>   -->
+
+
+    <!-- User Food List Fragment -->
+<!--    <string name="miBottomNavHome">Home</string>    -->
+<!--    <string name="miBottomNavSearch">Search</string>    -->
+<!--    <string name="miBottomNavUserList">User List</string>   -->
+
+
+    <!-- PLACEHOLDER -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
