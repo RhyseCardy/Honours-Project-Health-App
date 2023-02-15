@@ -30,12 +30,11 @@
     <string name="tvSearchBarcodeScannerLabel">You Can Search Food Items Using A Barcode Scanner</string>
     <string name="etEnterFoodItem">Enter Food Item...</string>
     <string name="btnGoToBarcodeScanner">Go To Barcode Scanner</string>
+    <string name="btnGoToFoodList">Search</string>
 
 
     <!-- Food Info Fragment -->
-<!--    <string name="miBottomNavHome">Home</string>    -->
-<!--    <string name="miBottomNavSearch">Search</string>    -->
-<!--    <string name="miBottomNavUserList">User List</string>   -->
+    <string name="btnGoToAbout">Unsure What Something Means? Tap Here!</string>
 
 
     <!-- Food List Fragment -->
@@ -48,6 +47,19 @@
 <!--    <string name="miBottomNavHome">Home</string>    -->
 <!--    <string name="miBottomNavSearch">Search</string>    -->
 <!--    <string name="miBottomNavUserList">User List</string>   -->
+
+    <!-- Barcode Scanner Fragment -->
+        <string name="tvScanFoodItemLabel">Scan Food Item</string>
+        <string name="tvScanBarcodeInfoLabel">Scan a barcode to be instantly sent to that products Info Page</string>
+        <string name="btnScan">Scan</string>
+        <string name="btnReverseCam">Reverse Camera</string>
+        <string name="btnCancelCam">Cancel</string>
+        <string name="ivRoundRectangleScanner">rounded rectangle on Barcode Scanner Page</string>
+        <string name="ivBlackRectangleScanner">black rectangle on Barcode Scanner Page</string>
+        <string name="ivCameraScanner">Reverse Camera Icon</string>
+        <string name="ivCancelScanner">Cancel Scanner Icon</string>
+        <string name="ivScanScanner">Scan Icon</string>
+
 
 
     <!-- PLACEHOLDER -->

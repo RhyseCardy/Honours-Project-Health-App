@@ -3,17 +3,20 @@ package mobileapp.development.honoursprojecthealthapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FoodSelectionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FoodSelectionFragment extends Fragment {
+public class FoodSelectionFragment extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +62,26 @@ public class FoodSelectionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_food_selection, container, false);
+        View view =  inflater.inflate(R.layout.fragment_food_selection, container, false);
+
+        Button btnGoToBarcodeScanner = view.findViewById(R.id.btnGoToBarcodeScanner);
+        btnGoToBarcodeScanner.setOnClickListener(this);
+
+        Button btnGoToFoodList = view.findViewById(R.id.btnGoToFoodList);
+        btnGoToFoodList.setOnClickListener(this);
+
+        return view;
+    }
+
+//    TO BE UPDATED WHEN API LINK IS MADE!!
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnGoToBarcodeScanner) {
+            Navigation.findNavController(v).navigate(R.id.action_foodSelectionFragment_to_barcodeScannerFragment);
+        }
+        else if (v.getId() == R.id.btnGoToFoodList) {
+            Navigation.findNavController(v).navigate(R.id.action_foodSelectionFragment_to_foodListFragment);
+        }
     }
 }

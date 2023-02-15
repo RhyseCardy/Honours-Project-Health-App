@@ -3,17 +3,19 @@ package mobileapp.development.honoursprojecthealthapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FoodInfoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FoodInfoFragment extends Fragment {
+public class FoodInfoFragment extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +61,17 @@ public class FoodInfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_food_info, container, false);
+        View view =  inflater.inflate(R.layout.fragment_food_info, container, false);
+        Button btnGoToAbout = view.findViewById(R.id.btnGoToAbout);
+        btnGoToAbout.setOnClickListener(this);
+
+        return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnGoToAbout) {
+            Navigation.findNavController(v).navigate(R.id.action_foodInfoFragment_to_aboutFragment);
+        }
     }
 }
