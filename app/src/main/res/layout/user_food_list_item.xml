@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF0CB">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="384dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:text="UPDATE BOOKMARK ON CLICK LISTENER IN THE RECYCLER VIEW ADAPTER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListFoodName" />
+
+    <ImageView
+        android:id="@+id/ivUserFoodListPlaceholderImage"
+        android:layout_width="266dp"
+        android:layout_height="162dp"
+        android:background="@drawable/faded_rounded_green_rectangle"
+        android:contentDescription="@string/ivFoodListPlaceholderImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/food_item_placeholder" />
+
+    <TextView
+        android:id="@+id/tvUserFoodListFoodName"
+        android:layout_width="235dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/darker_green_rounded_rectangle"
+        android:gravity="center"
+        android:text="@string/tvFoodListFoodName"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUserFoodListPlaceholderImage" />
+
+    <ImageView
+        android:id="@+id/btnUserBookmarkCheck"
+        android:layout_width="34dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/btnFoodListBookmark"
+        android:src="@drawable/bookmark_check"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserFoodListFoodName"
+        app:layout_constraintEnd_toEndOf="@+id/tvUserFoodListFoodName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvUserFoodListFoodName"
+        app:layout_constraintTop_toTopOf="@+id/tvUserFoodListFoodName"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="RedundantDescriptionCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

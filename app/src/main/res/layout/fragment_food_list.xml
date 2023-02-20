@@ -7,15 +7,63 @@
     android:background="#FFF0CB"
     tools:context=".FoodListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:layout_marginTop="236dp"
-        android:text="ADD RECYCLER VIEW WITH API INFO HERE"
+    <Button
+        android:id="@+id/btnGoToFoodList2"
+        android:layout_width="119dp"
+        android:layout_height="62dp"
+        android:text="@string/btnGoToFoodList"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/etEnterFoodItem2"
+        app:layout_constraintEnd_toEndOf="@+id/etEnterFoodItem2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/etEnterFoodItem2"
+        app:layout_constraintTop_toTopOf="@+id/etEnterFoodItem2"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <EditText
+        android:id="@+id/etEnterFoodItem2"
+        android:layout_width="404dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_green_rectangle"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/etEnterFoodItem"
+        android:textAlignment="center"
         android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_foodList"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_foodList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="312dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="360dp"
+        android:text="MAKE SURE BUTTON CORRECTLY UPDATES RECYCLER VIEW TO NEW SEARCH RESULTS IN THE API"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

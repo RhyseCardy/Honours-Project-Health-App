@@ -20,11 +20,6 @@
             app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
-        android:id="@+id/userFoodListFragment"
-        android:name="mobileapp.development.honoursprojecthealthapp.UserFoodListFragment"
-        android:label="fragment_user_food_list"
-        tools:layout="@layout/fragment_user_food_list" />
-    <fragment
         android:id="@+id/homeFragment"
         android:name="mobileapp.development.honoursprojecthealthapp.HomeFragment"
         android:label="HomeFragment" />
@@ -62,4 +57,9 @@
         android:name="mobileapp.development.honoursprojecthealthapp.FoodListFragment"
         android:label="fragment_food_list"
         tools:layout="@layout/fragment_food_list" />
+    <fragment
+        android:id="@+id/userFoodListFragment"
+        android:name="mobileapp.development.honoursprojecthealthapp.UserFoodListFragment"
+        android:label="fragment_user_food_list"
+        tools:layout="@layout/fragment_user_food_list" />
 </navigation>

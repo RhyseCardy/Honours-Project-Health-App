@@ -38,9 +38,15 @@
 
 
     <!-- Food List Fragment -->
-<!--    <string name="miBottomNavHome">Home</string>    -->
-<!--    <string name="miBottomNavSearch">Search</string>    -->
-<!--    <string name="miBottomNavUserList">User List</string>   -->
+        <string name="etEnterFoodItem2">Home</string>
+        <string name="btnGoToFoodList2">Search</string>
+        <string name="rv_foodList">User List</string>
+
+    <!-- Food List Item & User Food List Item Fragments -->
+    <string name="tvFoodListFoodName">Coca-Cola Zero - 330ml</string>
+    <string name="ivFoodListPlaceholderImage">Placeholder image of food item</string>
+    <string name="btnFoodListBookmark">Image of a bookmark used as button for adding items to user list</string>
+
 
 
     <!-- User Food List Fragment -->

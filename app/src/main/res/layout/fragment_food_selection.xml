@@ -95,14 +95,14 @@
 
     <Button
         android:id="@+id/btnGoToFoodList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="108dp"
+        android:layout_height="68dp"
         android:text="@string/btnGoToFoodList"
         app:layout_constraintBottom_toBottomOf="@+id/etEnterFoodItem"
         app:layout_constraintEnd_toEndOf="@+id/etEnterFoodItem"
-        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/etEnterFoodItem"
         app:layout_constraintTop_toTopOf="@+id/etEnterFoodItem"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.578" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
