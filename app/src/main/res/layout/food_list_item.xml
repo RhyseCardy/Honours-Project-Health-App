@@ -19,30 +19,17 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFoodListPlaceholderImage" />
+        app:layout_constraintTop_toBottomOf="@+id/ivFoodListImage" />
 
     <ImageView
-        android:id="@+id/ivFoodListPlaceholderImage"
+        android:id="@+id/ivFoodListImage"
         android:layout_width="266dp"
         android:layout_height="162dp"
         android:background="@drawable/faded_rounded_green_rectangle"
-        android:contentDescription="@string/ivFoodListPlaceholderImage"
+        android:contentDescription="@string/ivFoodListImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/food_item_placeholder" />
-
-    <ImageView
-        android:id="@+id/btnFoodListBookmark"
-        android:layout_width="34dp"
-        android:layout_height="32dp"
-        android:contentDescription="@string/btnFoodListBookmark"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFoodListFoodName"
-        app:layout_constraintEnd_toEndOf="@+id/tvFoodListFoodName"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/tvFoodListFoodName"
-        app:layout_constraintTop_toTopOf="@+id/tvFoodListFoodName"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/bookmark_check" />
 
     <TextView
         android:id="@+id/textView7"
@@ -53,6 +40,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodListFoodName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodListFoodName"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btnFoodListBookmark"
+        android:layout_width="44dp"
+        android:layout_height="49dp"
+        android:contentDescription="@string/btnFoodListBookmark"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFoodListFoodName"
+        app:layout_constraintEnd_toEndOf="@+id/tvFoodListFoodName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvFoodListFoodName"
+        app:layout_constraintTop_toTopOf="@+id/tvFoodListFoodName"
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@drawable/bookmark_check"
+        tools:ignore="TouchTargetSizeCheck,RedundantDescriptionCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

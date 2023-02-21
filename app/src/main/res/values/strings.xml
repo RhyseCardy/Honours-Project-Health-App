@@ -44,7 +44,7 @@
 
     <!-- Food List Item & User Food List Item Fragments -->
     <string name="tvFoodListFoodName">Coca-Cola Zero - 330ml</string>
-    <string name="ivFoodListPlaceholderImage">Placeholder image of food item</string>
+    <string name="ivFoodListImage">Placeholder image of food item</string>
     <string name="btnFoodListBookmark">Image of a bookmark used as button for adding items to user list</string>
 
 

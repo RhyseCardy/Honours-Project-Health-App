@@ -15,14 +15,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListFoodName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListFoodName"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/ivUserFoodListPlaceholderImage"
         android:layout_width="266dp"
         android:layout_height="162dp"
         android:background="@drawable/faded_rounded_green_rectangle"
-        android:contentDescription="@string/ivFoodListPlaceholderImage"
+        android:contentDescription="@string/ivFoodListImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/food_item_placeholder" />
@@ -42,17 +43,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivUserFoodListPlaceholderImage" />
 
-    <ImageView
-        android:id="@+id/btnUserBookmarkCheck"
-        android:layout_width="34dp"
-        android:layout_height="32dp"
+    <ImageButton
+        android:id="@+id/btnUserFoodListBookmark"
+        android:layout_width="38dp"
+        android:layout_height="44dp"
         android:contentDescription="@string/btnFoodListBookmark"
-        android:src="@drawable/bookmark_check"
         app:layout_constraintBottom_toBottomOf="@+id/tvUserFoodListFoodName"
         app:layout_constraintEnd_toEndOf="@+id/tvUserFoodListFoodName"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/tvUserFoodListFoodName"
         app:layout_constraintTop_toTopOf="@+id/tvUserFoodListFoodName"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="RedundantDescriptionCheck" />
+        app:layout_constraintVertical_bias="0.625"
+        app:srcCompat="@drawable/bookmark_check"
+        tools:ignore="TouchTargetSizeCheck,RedundantDescriptionCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
