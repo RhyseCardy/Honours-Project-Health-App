@@ -2,11 +2,17 @@ package mobileapp.development.honoursprojecthealthapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.List;
+
+import mobileapp.development.honoursprojecthealthapp.data.FoodList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +66,18 @@ public class FoodListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_food_list, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // get the data to display
+
+        // create the adapter for the RecyclerView
+
+        // get the RecyclerView
+
+        // wireup the RecyclerView with the adapter
     }
 }

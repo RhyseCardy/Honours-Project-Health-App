@@ -28,6 +28,14 @@ public class FoodListRecyclerViewAdapter  extends RecyclerView.Adapter<FoodListR
         this.foodLists = foodLists;
     }
 
+    // RECYCLERVIEW WONT BE FULLY FUNCTIONAL UNTIL API IS INTEGRATED AND ROOM DATABASE IS CREATED WITH THE VALUES STORED
+
+    //              TODO
+
+    // UPDATE BOOKMARK ON CLICK LISTENER IN THE RECYCLER VIEW ADAPTER
+    // MAKE SURE BUTTON CORRECTLY UPDATES RECYCLER VIEW TO NEW SEARCH RESULTS IN THE API
+
+
     @NonNull
     @Override
     public FoodListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,8 +53,11 @@ public class FoodListRecyclerViewAdapter  extends RecyclerView.Adapter<FoodListR
         // update the View being held by holder with details of foodList
         View foodListItemView = holder.foodListItemView;
 
+        // update the name of food item
         TextView tvFoodListFoodName = foodListItemView.findViewById(R.id.tvFoodListFoodName);
         tvFoodListFoodName.setText(foodList.getFoodItemName());
+
+
 
         // POTENTIALLY INCLUDE IMAGE VIEW IN HERE, IGNORE FOR NOW
         // DO IMAGE VIEW WHEN THE API IS INTEGRATED AND THE IMAGE NEEDS TO UPDATE USING API

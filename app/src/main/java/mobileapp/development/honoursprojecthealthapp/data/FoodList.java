@@ -7,15 +7,32 @@ public class FoodList {
     private int foodItemImage;
 
 
-    public FoodList() {super();}
+    public FoodList() {
+        super();
+    }
 
-    public String getFoodItemName() {return foodItemName;}
-    public void setFoodItemName(String foodItemName) {this.foodItemName = foodItemName;}
+    public String getFoodItemName() {
+        return foodItemName;
+    }
 
-    public int getFoodItemImage() {return foodItemImage;}
-    public void setFoodItemImage(int foodItemImage) {this.foodItemImage = foodItemImage;}
+    public void setFoodItemName(String foodItemName) {
+        this.foodItemName = foodItemName;
+    }
 
+    public int getFoodItemImage() {
+        return foodItemImage;
+    }
 
+    public void setFoodItemImage(int foodItemImage) {
+        this.foodItemImage = foodItemImage;
+    }
 
+    @Override
+    public String toString() {
+        return "FoodList{" +
+                "foodListFoodName=" + foodItemName +
+                ", gameInfoPlatform=" + foodItemImage +
+                "}";
+    }
 
 }
