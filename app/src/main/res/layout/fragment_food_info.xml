@@ -10,25 +10,200 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="288dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="228dp"
-        android:text="ADD RECYCLER VIEW WITH API INFO HERE"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnGoToAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="100dp"
         android:text="@string/btnGoToAbout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNOVAScoreLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tvFoodInfoNameLabel"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivFoodInfoImagePlaceholder" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tvFoodInfoName"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/ivFoodInfoImagePlaceholder"
+        tools:text="Name:" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoAllergensLabel"
+        android:layout_width="143dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tvFoodInfoAllergensLabel"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNameLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoAllergens"
+        android:layout_width="143dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tvFoodInfoAllergens"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoAllergensLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoName"
+        tools:text="Allergens From Ingredients:" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoVeganLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tvFoodInfoVeganLabel"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoAllergensLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoVegan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tvFoodInfoVegan"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoVeganLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoAllergens"
+        tools:text="Vegan?:" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoVegetarianLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tvFoodInfoVegetarianLabel"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVeganLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoVegetarian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tvFoodInfoVegetarian"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoVegetarianLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVegan"
+        tools:text="Vegetarian?:" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoNUTRIScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tvFoodInfoNUTRIScoreLabel"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVegetarianLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoNUTRIScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tvFoodInfoNUTRIScore"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoNUTRIScoreLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVegetarian"
+        tools:text="Nutrition Score:" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoNOVAScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tvFoodInfoNOVAScoreLabel"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNUTRIScoreLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoNOVAScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tvFoodInfoNOVAScore"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoNOVAScoreLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNUTRIScore"
+        tools:text="NOVA Score:" />
+
+    <ImageView
+        android:id="@+id/ivFoodInfoImagePlaceholder"
+        android:layout_width="168dp"
+        android:layout_height="181dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/ivFoodInfoImagePlaceholder"
+        android:src="@drawable/food_item_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,6 +35,19 @@
 
     <!-- Food Info Fragment -->
     <string name="btnGoToAbout">Unsure What Something Means? Tap Here!</string>
+    <string name="tvFoodInfoNameLabel">Name:</string>
+    <string name="tvFoodInfoAllergensLabel">Allergens From Ingredients:</string>
+    <string name="tvFoodInfoVeganLabel">Vegan?:</string>
+    <string name="tvFoodInfoVegetarianLabel">Vegetarian?:</string>
+    <string name="tvFoodInfoNUTRIScoreLabel">Nutrition Score:</string>
+    <string name="tvFoodInfoNOVAScoreLabel">NOVA Score:</string>
+    <string name="ivFoodInfoImagePlaceholder">Placeholder Image of Food Item On Food Info Page</string>
+    <string name="tvFoodInfoName">%1$s</string>
+    <string name="tvFoodInfoAllergens">%1$s</string>
+    <string name="tvFoodInfoVegan">%1$s</string>
+    <string name="tvFoodInfoVegetarian">%1$s</string>
+    <string name="tvFoodInfoNUTRIScore">%1$s</string>
+    <string name="tvFoodInfoNOVAScore">%1$s</string>
 
 
     <!-- Food List Fragment -->
