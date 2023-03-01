@@ -11,12 +11,12 @@
         android:label="fragment_food_selection"
         tools:layout="@layout/fragment_food_selection" >
         <action
-            android:id="@+id/action_foodSelectionFragment_to_foodListFragment"
-            app:destination="@id/foodListFragment"
-            app:enterAnim="@android:anim/slide_in_left" />
-        <action
             android:id="@+id/action_foodSelectionFragment_to_barcodeScannerFragment"
             app:destination="@id/barcodeScannerFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_foodSelectionFragment_to_foodInfoFragment"
+            app:destination="@id/foodInfoFragment"
             app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
@@ -34,12 +34,12 @@
         android:label="fragment_barcode_scanner"
         tools:layout="@layout/fragment_barcode_scanner" >
         <action
-            android:id="@+id/action_barcodeScannerFragment_to_foodListFragment"
-            app:destination="@id/foodListFragment"
-            app:enterAnim="@android:anim/slide_in_left" />
-        <action
             android:id="@+id/action_barcodeScannerFragment_to_foodSelectionFragment"
             app:destination="@id/foodSelectionFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_barcodeScannerFragment_to_foodInfoFragment"
+            app:destination="@id/foodInfoFragment"
             app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
@@ -52,11 +52,6 @@
             app:destination="@id/aboutFragment"
             app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
-    <fragment
-        android:id="@+id/foodListFragment"
-        android:name="mobileapp.development.honoursprojecthealthapp.FoodListFragment"
-        android:label="fragment_food_list"
-        tools:layout="@layout/fragment_food_list" />
     <fragment
         android:id="@+id/userFoodListFragment"
         android:name="mobileapp.development.honoursprojecthealthapp.UserFoodListFragment"

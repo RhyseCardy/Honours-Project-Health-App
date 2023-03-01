@@ -61,6 +61,7 @@ public class FoodSelectionFragment extends Fragment implements View.OnClickListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_food_selection, container, false);
 
@@ -81,7 +82,7 @@ public class FoodSelectionFragment extends Fragment implements View.OnClickListe
             Navigation.findNavController(v).navigate(R.id.action_foodSelectionFragment_to_barcodeScannerFragment);
         }
         else if (v.getId() == R.id.btnGoToFoodList) {
-            Navigation.findNavController(v).navigate(R.id.action_foodSelectionFragment_to_foodListFragment);
+            Navigation.findNavController(v).navigate(R.id.action_foodSelectionFragment_to_foodInfoFragment);
         }
     }
 }

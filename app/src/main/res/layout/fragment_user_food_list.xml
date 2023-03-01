@@ -9,10 +9,35 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_userFoodList"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="406dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListTitleLabel" />
+
+    <TextView
+        android:id="@+id/tvUserFoodListTitleLabel"
+        android:layout_width="336dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/big_rounded_rectangle"
+        android:gravity="center"
+        android:text="@string/tvUserFoodListTitleLabel"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnClearItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/btnClearItems"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_userFoodList" />
 </androidx.constraintlayout.widget.ConstraintLayout>

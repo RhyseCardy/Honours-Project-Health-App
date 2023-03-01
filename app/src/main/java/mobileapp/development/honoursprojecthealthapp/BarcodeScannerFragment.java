@@ -78,7 +78,7 @@ public class BarcodeScannerFragment extends Fragment implements View.OnClickList
             Navigation.findNavController(v).navigate(R.id.action_barcodeScannerFragment_to_foodSelectionFragment);
         }
         else if (v.getId() == R.id.btnScan) {
-            Navigation.findNavController(v).navigate(R.id.action_barcodeScannerFragment_to_foodListFragment);
+            Navigation.findNavController(v).navigate(R.id.action_barcodeScannerFragment_to_foodInfoFragment);
         }
     }
 }

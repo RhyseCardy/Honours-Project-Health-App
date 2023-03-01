@@ -14,7 +14,7 @@
         android:id="@+id/btnGoToBarcodeScanner"
         android:layout_width="365dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="100dp"
         android:text="@string/btnGoToBarcodeScanner"
         android:textSize="20sp"
@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSearchBarcodeScannerLabel"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/etEnterFoodItem"

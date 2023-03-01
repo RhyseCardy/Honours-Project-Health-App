@@ -40,7 +40,7 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
     @Override
     public UserFoodListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // inflate the layout for the food item list
-        View userFoodListItemView = LayoutInflater.from(this.context).inflate(R.layout.food_list_item, parent, false);
+        View userFoodListItemView = LayoutInflater.from(this.context).inflate(R.layout.user_food_list_item, parent, false);
         UserFoodListViewHolder viewHolder = new UserFoodListViewHolder(userFoodListItemView, this);
         return viewHolder;
     }
@@ -51,11 +51,11 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
         UserFoodList userFoodList = this.userFoodLists.get(position);
 
         // update the View being held by holder with details of foodList
-        View foodListItemView = holder.userFoodListItemView;
+        View userFoodListItemView = holder.userFoodListItemView;
 
         // update the name of food item
-        TextView tvFoodListFoodName = foodListItemView.findViewById(R.id.tvUserFoodListFoodName);
-        tvFoodListFoodName.setText(userFoodList.getUserFoodItemName());
+        TextView tvUserFoodListFoodName = userFoodListItemView.findViewById(R.id.tvUserFoodListFoodName);
+        tvUserFoodListFoodName.setText(userFoodList.getUserFoodItemName());
 
 
 
@@ -79,7 +79,7 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
             this.adapter = adapter;
             this.userFoodListItemView.setOnClickListener(this);
 
-            userFoodListItemView.findViewById(R.id.btnFoodListBookmark).setOnClickListener(this);
+            userFoodListItemView.findViewById(R.id.btnUserFoodListBookmark).setOnClickListener(this);
         }
 
         @Override
@@ -88,9 +88,9 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
             // get the clicked item's position
             int position = getAdapterPosition();
 
-            UserFoodList foodList = userFoodLists.get(position);
+            UserFoodList userFoodList = userFoodLists.get(position);
 
-            Log.d("TASK_RECYCLER", "user clicked on bookmark for " + foodList.getUserFoodItemName());
+            Log.d("TASK_RECYCLER", "user clicked on bookmark for " + userFoodList.getUserFoodItemName());
         }
     }
 }

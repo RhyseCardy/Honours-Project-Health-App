@@ -31,7 +31,7 @@ public class FoodList {
     public String toString() {
         return "FoodList{" +
                 "foodListFoodName=" + foodItemName +
-                ", gameInfoPlatform=" + foodItemImage +
+                ", foodItemImage=" + foodItemImage +
                 "}";
     }
 

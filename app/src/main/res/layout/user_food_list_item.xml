@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,8 +9,8 @@
 
     <ImageView
         android:id="@+id/ivUserFoodListPlaceholderImage"
-        android:layout_width="266dp"
-        android:layout_height="162dp"
+        android:layout_width="203dp"
+        android:layout_height="160dp"
         android:background="@drawable/faded_rounded_green_rectangle"
         android:contentDescription="@string/ivFoodListImage"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,23 +19,24 @@
 
     <TextView
         android:id="@+id/tvUserFoodListFoodName"
-        android:layout_width="235dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="200dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/darker_green_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvFoodListFoodName"
         android:textAlignment="center"
         android:textColor="#000000"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivUserFoodListPlaceholderImage" />
 
     <ImageButton
         android:id="@+id/btnUserFoodListBookmark"
-        android:layout_width="38dp"
-        android:layout_height="44dp"
+        android:layout_width="36dp"
+        android:layout_height="42dp"
         android:contentDescription="@string/btnFoodListBookmark"
         app:layout_constraintBottom_toBottomOf="@+id/tvUserFoodListFoodName"
         app:layout_constraintEnd_toEndOf="@+id/tvUserFoodListFoodName"

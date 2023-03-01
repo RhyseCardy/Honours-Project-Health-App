@@ -61,11 +61,10 @@
     <string name="btnFoodListBookmark">Image of a bookmark used as button for adding items to user list</string>
 
 
-
     <!-- User Food List Fragment -->
-<!--    <string name="miBottomNavHome">Home</string>    -->
-<!--    <string name="miBottomNavSearch">Search</string>    -->
-<!--    <string name="miBottomNavUserList">User List</string>   -->
+    <string name="tvUserFoodListTitleLabel">User Selected Food Items</string>
+    <string name="btnClearItems">Clear Items</string>
+
 
     <!-- Barcode Scanner Fragment -->
         <string name="tvScanFoodItemLabel">Scan Food Item</string>
@@ -81,7 +80,7 @@
 
 
 
-    <!-- PLACEHOLDER -->
+    <!-- PLACEHOLDER TEXT -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

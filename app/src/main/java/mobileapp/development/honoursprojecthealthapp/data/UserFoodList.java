@@ -15,23 +15,23 @@ public class UserFoodList {
         return userFoodItemName;
     }
 
-    public void setFoodItemName(String foodItemName) {
+    public void setUserFoodItemName(String userFoodItemName) {
         this.userFoodItemName = userFoodItemName;
     }
 
-    public int getFoodItemImage() {
+    public int getUserFoodItemImage() {
         return userFoodItemImage;
     }
 
-    public void setFoodItemImage(int foodItemImage) {
+    public void setUserFoodItemImage(int userFoodItemImage) {
         this.userFoodItemImage = userFoodItemImage;
     }
 
     @Override
     public String toString() {
-        return "FoodList{" +
-                "foodListFoodName=" + userFoodItemName +
-                ", gameInfoPlatform=" + userFoodItemImage +
+        return "UserFoodList{" +
+                "userFoodListFoodName=" + userFoodItemName +
+                ", userFoodItemImage=" + userFoodItemImage +
                 "}";
     }
 
