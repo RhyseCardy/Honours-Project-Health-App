@@ -7,6 +7,11 @@ public class FoodList {
     private int foodItemImage;
 
 
+    //FILE POTENTIALLY NOT NEEDED!!!!!
+    //DO NOT WORK IN THIS FILE!!!!!!!!
+
+
+
     public FoodList() {
         super();
     }

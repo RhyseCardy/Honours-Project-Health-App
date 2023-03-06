@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNOVAScoreLabel"
-        app:layout_constraintVertical_bias="0.43" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/tvFoodInfoNameLabel"

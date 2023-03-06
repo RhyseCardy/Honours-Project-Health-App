@@ -10,6 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import mobileapp.development.honoursprojecthealthapp.data.FoodList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FoodInfoFragment#newInstance} factory method to
@@ -17,33 +22,29 @@ import android.widget.Button;
  */
 public class FoodInfoFragment extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
+    private static final String TAG = "FoodItemFrag";
+    private static final String ARG_FOOD_ITEM_NAME = "foodItemName";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String mFoodItemName;
 
     public FoodInfoFragment() {
         // Required empty public constructor
     }
+    List<FoodList> foodLists = new ArrayList<>();
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * //@param foodItemName the name of the food item to display that food items information.
      * @return A new instance of fragment FoodInfoFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static FoodInfoFragment newInstance(String param1, String param2) {
+    public static FoodInfoFragment newInstance(String mFoodItemName) {
         FoodInfoFragment fragment = new FoodInfoFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        //args.putString(ARG_FOOD_ITEM_NAME, foodItemName);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,10 +53,11 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mFoodItemName = getArguments().getString(ARG_FOOD_ITEM_NAME);
         }
     }
+
+    //foodItemName IS TO BE USED WHEN API LINK IS ESTABLISHED AND DATA IS ADDED TO DATABASE AND RETRIEVED
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

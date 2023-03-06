@@ -1,10 +1,25 @@
 package mobileapp.development.honoursprojecthealthapp.data;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "UserFoodList")
 public class UserFoodList {
 
     private String userFoodItemName;
 
     private int userFoodItemImage;
+
+    public int getUid() {return uid;}
+
+    public void setUid(int uid) {this.uid = uid;}
+
+
+    @NonNull
+    @PrimaryKey(autoGenerate = true)
+    private int uid;
+
 
 
     public UserFoodList() {
