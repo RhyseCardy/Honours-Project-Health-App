@@ -41,7 +41,7 @@
     <string name="tvFoodInfoVegetarianLabel">Vegetarian?:</string>
     <string name="tvFoodInfoNUTRIScoreLabel">Nutrition Score:</string>
     <string name="tvFoodInfoNOVAScoreLabel">NOVA Score:</string>
-    <string name="ivFoodInfoImagePlaceholder">Placeholder Image of Food Item On Food Info Page</string>
+    <string name="ivFoodInfoImage">Placeholder Image of Food Item On Food Info Page</string>
     <string name="tvFoodInfoName">%1$s</string>
     <string name="tvFoodInfoAllergens">%1$s</string>
     <string name="tvFoodInfoVegan">%1$s</string>
@@ -55,15 +55,20 @@
         <string name="btnGoToFoodList2">Search</string>
         <string name="rv_foodList">User List</string>
 
-    <!-- Food List Item & User Food List Item Fragments -->
-    <string name="tvFoodListFoodName">Coca-Cola Zero - 330ml</string>
-    <string name="ivFoodListImage">Placeholder image of food item</string>
-    <string name="btnFoodListBookmark">Image of a bookmark used as button for adding items to user list</string>
+    <!-- User Food List Item Fragment -->
+    <string name="tvUserFoodListNameLabel"></string>
+    <string name="tvUserFoodListVeganLabel"></string>
+    <string name="ivUserFoodListImage"></string>
+    <string name="tvUserFoodListVegetarianLabel"></string>
+    <string name="tvUserFoodListNUTRIScoreLabel"></string>
+    <string name="tvUserFoodListNOVAScoreLabel"></string>
+    <string name="tvUserFoodListAllergensLabel"></string>
 
 
     <!-- User Food List Fragment -->
     <string name="tvUserFoodListTitleLabel">User Selected Food Items</string>
     <string name="btnClearItems">Clear Items</string>
+    <string name="btnAddToUserList">Add To User List</string>
 
 
     <!-- Barcode Scanner Fragment -->

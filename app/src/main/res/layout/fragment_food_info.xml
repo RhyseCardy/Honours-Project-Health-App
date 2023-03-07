@@ -14,34 +14,32 @@
         android:id="@+id/btnGoToAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="10dp"
         android:text="@string/btnGoToAbout"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNOVAScoreLabel"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAddToUserList" />
 
     <TextView
         android:id="@+id/tvFoodInfoNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/tvFoodInfoNameLabel"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFoodInfoImagePlaceholder" />
+        app:layout_constraintTop_toBottomOf="@+id/ivFoodInfoImage" />
 
     <TextView
         android:id="@+id/tvFoodInfoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="248dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/tvFoodInfoName"
         android:textColor="#000000"
@@ -49,7 +47,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvFoodInfoNameLabel"
-        app:layout_constraintTop_toBottomOf="@+id/ivFoodInfoImagePlaceholder"
+        app:layout_constraintTop_toBottomOf="@+id/ivFoodInfoImage"
         tools:text="Name:" />
 
     <TextView
@@ -67,13 +65,13 @@
 
     <TextView
         android:id="@+id/tvFoodInfoAllergens"
-        android:layout_width="143dp"
-        android:layout_height="49dp"
+        android:layout_width="217dp"
+        android:layout_height="64dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/tvFoodInfoAllergens"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -85,8 +83,8 @@
         android:id="@+id/tvFoodInfoVeganLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:text="@string/tvFoodInfoVeganLabel"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -198,14 +196,25 @@
         tools:text="NOVA Score:" />
 
     <ImageView
-        android:id="@+id/ivFoodInfoImagePlaceholder"
-        android:layout_width="168dp"
-        android:layout_height="181dp"
+        android:id="@+id/ivFoodInfoImage"
+        android:layout_width="176dp"
+        android:layout_height="157dp"
         android:layout_marginTop="5dp"
-        android:contentDescription="@string/ivFoodInfoImagePlaceholder"
+        android:contentDescription="@string/ivFoodInfoImage"
         android:src="@drawable/food_item_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAddToUserList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/btnAddToUserList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNOVAScoreLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

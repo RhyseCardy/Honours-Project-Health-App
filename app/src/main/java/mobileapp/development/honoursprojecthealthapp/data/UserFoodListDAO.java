@@ -28,13 +28,13 @@ public interface UserFoodListDAO {
     @Delete
     public void delete(List<UserFoodList> userFoodList);
 
-    //@Query("SELECT * FROM UserFoodlist WHERE userFoodItemName = :userFoodItemName")
+    @Query("SELECT * FROM UserFoodlist WHERE userFoodItemName = :userFoodItemName")
     public List<UserFoodList> findByFoodItemName(String userFoodItemName);
 
-    //@Query("SELECT * FROM userFoodlist")
+    @Query("SELECT * FROM userFoodlist")
     public List<UserFoodList> getAllFoodItems();
 
-    //@Query("DELETE FROM userFoodlist")
+    @Query("DELETE FROM userFoodlist")
     public void deleteAllItems();
 
     // FIND PROBLEM!!!

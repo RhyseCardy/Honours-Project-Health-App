@@ -2,17 +2,21 @@ package mobileapp.development.honoursprojecthealthapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import mobileapp.development.honoursprojecthealthapp.data.UserFoodListDAO;
+import java.util.List;
 
-import mobileapp.development.honoursprojecthealthapp.data.FoodList;
-//import mobileapp.development.honoursprojecthealthapp.data.FoodItemsDatabase;
+import mobileapp.development.honoursprojecthealthapp.data.UserFoodList;
+import mobileapp.development.honoursprojecthealthapp.data.UserFoodListDAO;
+import mobileapp.development.honoursprojecthealthapp.data.FoodItemsDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +27,10 @@ public class UserFoodListFragment extends Fragment implements View.OnClickListen
 
     private UserFoodListRecyclerViewAdapter adapter;
 
+    private FoodItemsDatabase foodItemsDatabase = FoodItemsDatabase.getDatabase(getContext());
+    private UserFoodListDAO userFoodListDAO = foodItemsDatabase.userFoodListDAO();
+
+    private List<UserFoodList> userFoodLists = userFoodListDAO.getAllFoodItems();
 
 
 
@@ -70,6 +78,9 @@ public class UserFoodListFragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         if (v.getId() == R.id.btnClearItems) {
             //delete all the items displayed in the user food list
+
+            //REMEMBER TO UN-COMMENT THIS
+
             //UserFoodListDAO.deleteAllItems();
 
 
