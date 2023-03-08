@@ -85,7 +85,7 @@
 
 
     <!-- Error Message For API -->
-    <string name="error_downloading_game_information">Error Getting Game Information From the Game API</string>
+    <string name="error_downloading_food_information">Error Getting Game Information From the Game API</string>
 
     <!-- Placeholder Text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

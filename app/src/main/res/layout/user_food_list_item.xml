@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/tvUserFoodListVeganLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="375dp"
+        android:layout_height="22dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:text="@string/tvUserFoodListVeganLabel"
@@ -47,8 +47,8 @@
 
     <TextView
         android:id="@+id/tvUserFoodListVegetarianLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="375dp"
+        android:layout_height="22dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:text="@string/tvFoodInfoVegetarian"

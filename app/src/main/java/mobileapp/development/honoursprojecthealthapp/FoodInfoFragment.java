@@ -97,35 +97,77 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
 
     // COMMENTED SO WORK CAN BE FINISHED LATER
 
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//        //inflate the layout for this fragment
-//
-//        Button btnAddToUserList = view.findViewById(R.id.btnAddToUserList);
-//        btnAddToUserList.setOnClickListener(this);
-//
-//        Uri uri = Utils.buildUri("https://world.openfoodfacts.org/cgi/search.pl?","search_terms", mFoodItemName, "json", "1");
-//
-//        Log.d(TAG, "onViewCreated: " + uri.toString());
-//
-//        // get the database for storing and loading the food item information to be displayed in user food list
-//        FoodItemsDatabase foodItemsDatabase = FoodItemsDatabase.getDatabase(getContext());
-//        //get the DAO for the food items
-//        UserFoodListDAO userFoodListDAO = foodItemsDatabase.userFoodListDAO();
-//
-//        //request a string response from the provided url using Volley
-//        StringRequest request = new StringRequest(Request.Method.GET, uri.toString(),
-//                //new Response.Listener<String>() {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        //inflate the layout for this fragment
 
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Log.d(TAG, response);
-//                        List<String>
-//
-//                    }
-                //}
-//    }
+        Button btnAddToUserList = view.findViewById(R.id.btnAddToUserList);
+        btnAddToUserList.setOnClickListener(this);
+
+        Uri uri = Utils.buildUri("https://world.openfoodfacts.org/cgi/search.pl?","search_terms", mFoodItemName, "json", "1");
+
+        Log.d(TAG, "onViewCreated: " + uri.toString());
+
+        // get the database for storing and loading the food item information to be displayed in user food list
+        FoodItemsDatabase foodItemsDatabase = FoodItemsDatabase.getDatabase(getContext());
+        //get the DAO for the food items
+        UserFoodListDAO userFoodListDAO = foodItemsDatabase.userFoodListDAO();
+
+        //request a string response from the provided url using Volley
+        StringRequest request = new StringRequest(Request.Method.GET, uri.toString(),
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d(TAG, response);
+                        List<String> ingredientsVeganArray = new ArrayList<String>();
+                        List<String> ingredientsVegetarianArray = new ArrayList<String>();
+
+                        try {
+                            //convert response to JSON Object
+                            JSONObject rootObject = new JSONObject(response);
+                            JSONArray resultsObj = rootObject.getJSONArray("products");
+                            JSONObject foodItemObj = resultsObj.getJSONObject(0);
+
+                            //add the food item information to foodInfo using API variable names
+                            String foodName = foodItemObj.getString("product_name");
+
+                            String foodAllergens = foodItemObj.getString("allergens_from_ingredients");
+
+
+                            JSONArray ingredientsVeganArrayObj = foodItemObj.getJSONArray("ingredients");
+
+
+                            JSONArray ingredientsVegetarianArrayObj = foodItemObj.getJSONArray("ingredients");
+
+
+                            String foodNUTRIScore = foodItemObj.getString("nutriscore_grade");
+
+                            int foodNOVAScore = foodItemObj.getInt("nova_group");
+
+                            // Ingredients are put into an array to find how many of them are vegan friendly
+                            for (int i = 0, j = ingredientsVeganArrayObj.length(); i < j; i++) {
+                                JSONObject veganObj = ingredientsVeganArrayObj.getJSONObject(i);
+                                String vegan = veganObj.getString("vegan");
+                                ingredientsVeganArray.add(vegan);
+                            }
+
+                            // Ingredients are put into an array to find how many of them are vegetarian friendly
+                            for (int i = 0, j = ingredientsVegetarianArrayObj.length(); i < j; i++) {
+                                JSONObject vegetarianObj = ingredientsVegetarianArrayObj.getJSONObject(i);
+                                String vegetarian = vegetarianObj.getString("vegetarian");
+                                ingredientsVeganArray.add(vegetarian);
+                            }
+                        } catch (JSONException e) {
+                            Toast.makeText(getActivity(), getString(R.string.error_downloading_food_information), Toast.LENGTH_LONG);
+
+                        }
+
+
+                    }
+                }
+    }
 
     @Override
     public void onClick(View v) {
