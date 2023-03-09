@@ -54,10 +54,12 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
         View userFoodListItemView = holder.userFoodListItemView;
 
         // update the name of food item
-        TextView tvUserFoodListFoodName = userFoodListItemView.findViewById(R.id.tvUserFoodListFoodName);
-        tvUserFoodListFoodName.setText(userFoodList.getUserFoodItemName());
+        //TextView tvUserFoodListFoodName = userFoodListItemView.findViewById(R.id.tvUserFoodListFoodName);
+        //tvUserFoodListFoodName.setText(userFoodList.getUserFoodItemName());
 
-
+        //
+        //UPDATE THIS TO INCLUDE THE NEWLY ADDED LIST ITEMS
+        //
 
         // POTENTIALLY INCLUDE IMAGE VIEW IN HERE, IGNORE FOR NOW
         // DO IMAGE VIEW WHEN THE API IS INTEGRATED AND THE IMAGE NEEDS TO UPDATE USING API
@@ -69,7 +71,7 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
         return this.userFoodLists.size();
     }
 
-    class UserFoodListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class UserFoodListViewHolder extends RecyclerView.ViewHolder {
         private View userFoodListItemView;
         private UserFoodListRecyclerViewAdapter adapter;
 
@@ -77,20 +79,8 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
             super(userFoodListItemView);
             this.userFoodListItemView = userFoodListItemView;
             this.adapter = adapter;
-            this.userFoodListItemView.setOnClickListener(this);
-
-            userFoodListItemView.findViewById(R.id.btnUserFoodListBookmark).setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View view) {
 
-            // get the clicked item's position
-            int position = getAdapterPosition();
-
-            UserFoodList userFoodList = userFoodLists.get(position);
-
-            Log.d("TASK_RECYCLER", "user clicked on bookmark for " + userFoodList.getUserFoodItemName());
-        }
     }
 }

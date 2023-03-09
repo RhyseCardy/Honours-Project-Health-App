@@ -36,7 +36,4 @@ public interface UserFoodListDAO {
 
     @Query("DELETE FROM userFoodlist")
     public void deleteAllItems();
-
-    // FIND PROBLEM!!!
-    // FIX LATER NEAR END OF DATABASE IMPLEMENTATION!!!
 }

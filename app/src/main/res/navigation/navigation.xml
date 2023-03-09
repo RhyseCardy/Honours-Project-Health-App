@@ -51,6 +51,9 @@
             android:id="@+id/action_foodInfoFragment_to_aboutFragment"
             app:destination="@id/aboutFragment"
             app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_foodInfoFragment_to_userFoodListFragment"
+            app:destination="@id/userFoodListFragment" />
     </fragment>
     <fragment
         android:id="@+id/userFoodListFragment"

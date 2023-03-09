@@ -19,7 +19,7 @@ public class UserFoodList {
 
     private String userFoodItemNUTRIScore;
 
-    private int userFoodItemNOVAScore;
+    private String userFoodItemNOVAScore;
 
 
     public int getUid() {return uid;}
@@ -87,11 +87,11 @@ public class UserFoodList {
         this.userFoodItemNUTRIScore = userFoodItemNUTRIScore;
     }
 
-    public int getUserFoodItemNOVAScore() {
+    public String getUserFoodItemNOVAScore() {
         return userFoodItemNOVAScore;
     }
 
-    public void setUserFoodItemNOVAScore(int userFoodItemNOVAScore) {
+    public void setUserFoodItemNOVAScore(String userFoodItemNOVAScore) {
         this.userFoodItemNOVAScore = userFoodItemNOVAScore;
     }
 

@@ -54,7 +54,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     public FoodInfoFragment() {
         // Required empty public constructor
     }
-    List<UserFoodList> foodLists = new ArrayList<>();
+    List<UserFoodList> userFoodList = new ArrayList<>();
 
     /**
      * Use this factory method to create a new instance of
@@ -130,6 +130,12 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                             JSONArray resultsObj = rootObject.getJSONArray("products");
                             JSONObject foodItemObj = resultsObj.getJSONObject(0);
 
+
+                            //
+                            //REMEMBER TO UPDATE THE IMAGE, DO THIS LATER!!!!
+                            //
+
+
                             //add the food item information to foodInfo using API variable names
                             String foodName = foodItemObj.getString("product_name");
 
@@ -159,6 +165,60 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                                 String vegetarian = vegetarianObj.getString("vegetarian");
                                 ingredientsVeganArray.add(vegetarian);
                             }
+
+                            // update text in the food item name text view
+                            TextView tvFoodInfoName = view.findViewById(R.id.tvFoodInfoName);
+                            tvFoodInfoName.setText(foodName);
+
+                            // update text in the ingredient vegan information text view
+                            TextView tvFoodInfoVegan = view.findViewById(R.id.tvFoodInfoVegan);
+                            tvFoodInfoVegan.setText(ingredientsVeganArrayObj.toString());
+
+                            // update text in the ingredient vegetarian text view
+                            TextView tvFoodInfoVegetarian = view.findViewById(R.id.tvFoodInfoVegetarian);
+                            tvFoodInfoVegetarian.setText(ingredientsVegetarianArray.toString());
+
+                            // update text in the food item's allergens information text view
+                            TextView tvFoodInfoAllergens = view.findViewById(R.id.tvFoodInfoAllergens);
+                            tvFoodInfoAllergens.setText(foodAllergens);
+
+                            // update text in the food item NUTRI Score text view
+                            TextView tvFoodInfoNUTRIScore = view.findViewById(R.id.tvFoodInfoNUTRIScore);
+                            tvFoodInfoNUTRIScore.setText(foodNUTRIScore);
+
+                            // update text in the food item NOVA Score text view
+                            TextView tvFoodInfoNOVAScore = view.findViewById(R.id.tvFoodInfoNOVAScore);
+                            tvFoodInfoNOVAScore.setText(String.valueOf(foodNOVAScore));
+
+                            // log to make the sure the API data is successfully added and read
+                            Log.d(TAG, foodName);
+                            Log.d(TAG, foodAllergens);
+                            Log.d(TAG, String.valueOf(ingredientsVeganArrayObj));
+                            Log.d(TAG, String.valueOf(ingredientsVegetarianArray));
+                            Log.d(TAG, String.valueOf(foodNOVAScore));
+                            Log.d(TAG, foodNUTRIScore);
+
+                            // on click listener for button that sends the data to be read and displayed in the fav games fragment
+                            btnAddToUserList.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    UserFoodList ufi = new UserFoodList();
+                                    ufi.setUserFoodItemName(foodName);
+                                    ufi.setUserFoodItemAllergens(foodAllergens);
+                                    ufi.setUserFoodItemNOVAScore(String.valueOf(foodNOVAScore));
+                                    ufi.setUserFoodItemVegan(String.valueOf(ingredientsVeganArrayObj));
+                                    ufi.setUserFoodItemVegetarian(String.valueOf(ingredientsVegetarianArrayObj));
+                                    ufi.setUserFoodItemNUTRIScore(foodNUTRIScore);
+                                    userFoodList.add(ufi);
+
+
+//                                    UserFoodListDAO.insert(userFoodList);
+//                                    int i = 0 ;
+//                                    Navigation.findNavController(view).navigate(R.id.action_foodInfoFragment_to_userFoodListFragment);
+//                                    Log.d(TAG, "onClick: "+ userFoodList);
+                                }
+                            });
+
                         } catch (JSONException e) {
                             Toast.makeText(getActivity(), getString(R.string.error_downloading_food_information), Toast.LENGTH_LONG);
 
@@ -166,7 +226,16 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
 
 
                     }
-                }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), getString(R.string.error_downloading_food_information), Toast.LENGTH_LONG);
+        }
+    });
+        // now the request is made
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+        queue.add(request);
+
     }
 
     @Override
