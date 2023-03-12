@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +35,6 @@ public class UserFoodListFragment extends Fragment implements View.OnClickListen
     private List<UserFoodList> userFoodLists = userFoodListDAO.getAllFoodItems();
 
 
-
     public UserFoodListFragment() {
         // Required empty public constructor
     }
@@ -41,13 +42,11 @@ public class UserFoodListFragment extends Fragment implements View.OnClickListen
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+
      * @return A new instance of fragment UserFoodListFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static UserFoodListFragment newInstance(String param1, String param2) {
+
+    public static UserFoodListFragment newInstance() {
         UserFoodListFragment fragment = new UserFoodListFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -79,14 +78,33 @@ public class UserFoodListFragment extends Fragment implements View.OnClickListen
         if (v.getId() == R.id.btnClearItems) {
             //delete all the items displayed in the user food list
 
-            //REMEMBER TO UN-COMMENT THIS
-
-            //UserFoodListDAO.deleteAllItems();
+            userFoodListDAO.deleteAllItems();
+            userFoodLists.clear();
+            adapter.notifyDataSetChanged();
 
 
         }
         //FILL IN WHEN RECYCLER VIEW IS WORKING AND CONNECTED TO CREATED DATABASE
         //THIS IS BECAUSE THIS BUTTON SUPPOSED TO RECEIVE SPECIFIC DATA FROM DATABASE
-
     }
+
+
+        @Override
+        public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+            //get the data to display
+
+
+            // create the adapter for the RecyclerView
+            adapter = new UserFoodListRecyclerViewAdapter(getContext(), userFoodLists);
+
+            // get the RecyclerView
+            RecyclerView rv_userFoodList = view.findViewById(R.id.rv_userFoodList);
+
+            //wire-up the RecyclerView with the adapter
+            rv_userFoodList.setLayoutManager(new LinearLayoutManager(getContext()));
+            rv_userFoodList.setAdapter(adapter);
+
+        }
+
 }

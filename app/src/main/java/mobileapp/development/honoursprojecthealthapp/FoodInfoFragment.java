@@ -48,28 +48,24 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
 
 
 
-    // TODO: Rename and change types of parameters
+    // member variables for setting up the display
     private String mFoodItemName;
 
     public FoodInfoFragment() {
         // Required empty public constructor
     }
-    List<UserFoodList> userFoodList = new ArrayList<>();
+    List<UserFoodList> userFoodLists = new ArrayList<>();
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
      * //@param foodItemName the name of the food item to display that food items information.
      * @return A new instance of fragment FoodInfoFragment.
      */
-    public static FoodInfoFragment newInstance(String mFoodItemName) {
+    public static FoodInfoFragment newInstance(String foodItemName) {
         FoodInfoFragment fragment = new FoodInfoFragment();
         Bundle args = new Bundle();
-
-        //REMEMBER TO UN-COMMENT THIS
-
-        //args.putString(ARG_FOOD_ITEM_NAME, foodItemName);
+        args.putString(ARG_FOOD_ITEM_NAME, foodItemName);
         fragment.setArguments(args);
         return fragment;
     }
@@ -95,7 +91,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    // COMMENTED SO WORK CAN BE FINISHED LATER
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -209,13 +205,12 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                                     ufi.setUserFoodItemVegan(String.valueOf(ingredientsVeganArrayObj));
                                     ufi.setUserFoodItemVegetarian(String.valueOf(ingredientsVegetarianArrayObj));
                                     ufi.setUserFoodItemNUTRIScore(foodNUTRIScore);
-                                    userFoodList.add(ufi);
+                                    userFoodLists.add(ufi);
 
-
-//                                    UserFoodListDAO.insert(userFoodList);
-//                                    int i = 0 ;
-//                                    Navigation.findNavController(view).navigate(R.id.action_foodInfoFragment_to_userFoodListFragment);
-//                                    Log.d(TAG, "onClick: "+ userFoodList);
+                                   userFoodListDAO.insert(userFoodLists);
+                                   int i = 0 ;
+                                   Navigation.findNavController(view).navigate(R.id.action_foodInfoFragment_to_userFoodListFragment);
+                                   Log.d(TAG, "onClick: "+ userFoodLists);
                                 }
                             });
 
@@ -242,6 +237,10 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         if (v.getId() == R.id.btnGoToAbout) {
             Navigation.findNavController(v).navigate(R.id.action_foodInfoFragment_to_aboutFragment);
+        }
+
+        if (v.getId() == R.id.btnAddToUserList) {
+            Navigation.findNavController(v).navigate(R.id.action_foodInfoFragment_to_userFoodListFragment);
         }
     }
 }

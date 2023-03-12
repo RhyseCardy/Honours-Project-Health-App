@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EdgeEffect;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,7 +84,17 @@ public class FoodSelectionFragment extends Fragment implements View.OnClickListe
             Navigation.findNavController(v).navigate(R.id.action_foodSelectionFragment_to_barcodeScannerFragment);
         }
         else if (v.getId() == R.id.btnGoToFoodList) {
-            Navigation.findNavController(v).navigate(R.id.action_foodSelectionFragment_to_foodInfoFragment);
+
+            // Get the food item entered by the user
+            EditText etEnterFoodItem = getView().findViewById(R.id.etEnterFoodItem);
+            String  FoodItemName = etEnterFoodItem.getText().toString();
+
+            // Create the bundles for the arguments
+            Bundle args = new Bundle();
+            args.putString("foodItemName", FoodItemName);
+
+            Navigation.findNavController(v).navigate
+                    (R.id.action_foodSelectionFragment_to_foodInfoFragment);
         }
     }
 }

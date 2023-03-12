@@ -28,38 +28,51 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
         this.userFoodLists = userFoodLists;
     }
 
-    // RECYCLERVIEW WONT BE FULLY FUNCTIONAL UNTIL API IS INTEGRATED AND ROOM DATABASE IS CREATED WITH THE VALUES STORED
-
-    //              TODO
-
-    // UPDATE BOOKMARK ON CLICK LISTENER IN THE RECYCLER VIEW ADAPTER
-    // MAKE SURE BUTTON CORRECTLY UPDATES RECYCLER VIEW TO NEW SEARCH RESULTS IN THE API
-
 
     @NonNull
     @Override
-    public UserFoodListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserFoodListRecyclerViewAdapter.UserFoodListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // inflate the layout for the food item list
-        View userFoodListItemView = LayoutInflater.from(this.context).inflate(R.layout.user_food_list_item, parent, false);
-        UserFoodListViewHolder viewHolder = new UserFoodListViewHolder(userFoodListItemView, this);
-        return viewHolder;
+        View view = LayoutInflater.from(this.context).inflate(R.layout.user_food_list_item, parent, false);
+        return new UserFoodListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserFoodListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserFoodListRecyclerViewAdapter.UserFoodListViewHolder holder, int position) {
         // get the food items to display
         UserFoodList userFoodList = this.userFoodLists.get(position);
 
         // update the View being held by holder with details of foodList
-        View userFoodListItemView = holder.userFoodListItemView;
+        View itemView = holder.itemView;
 
         // update the name of food item
-        //TextView tvUserFoodListFoodName = userFoodListItemView.findViewById(R.id.tvUserFoodListFoodName);
-        //tvUserFoodListFoodName.setText(userFoodList.getUserFoodItemName());
+        TextView tvUserFoodListFoodNameLabel = itemView.findViewById(R.id.tvUserFoodListNameLabel);
+        tvUserFoodListFoodNameLabel.setText(userFoodList.getUserFoodItemName());
+
+        // update the allergens of food item
+        TextView tvUserFoodListAllergensLabel = itemView.findViewById(R.id.tvUserFoodListAllergensLabel);
+        tvUserFoodListAllergensLabel.setText(userFoodList.getUserFoodItemAllergens());
+
+        // update the vegan info of food item
+        TextView tvUserFoodListVeganLabel = itemView.findViewById(R.id.tvUserFoodListVeganLabel);
+        tvUserFoodListVeganLabel.setText(userFoodList.getUserFoodItemVegan());
+
+        // update the vegetarian info of food item
+        TextView tvUserFoodListVegetarianLabel = itemView.findViewById(R.id.tvUserFoodListVegetarianLabel);
+        tvUserFoodListVegetarianLabel.setText(userFoodList.getUserFoodItemVegetarian());
+
+        // update the NUTRI score of food item
+        TextView tvUserFoodListFoodNUTRIScoreLabel = itemView.findViewById(R.id.tvUserFoodListNUTRIScoreLabel);
+        tvUserFoodListFoodNUTRIScoreLabel.setText(userFoodList.getUserFoodItemNUTRIScore());
+
+        // update the NOVA score of food item
+        TextView tvUserFoodListFoodNOVAScoreLabel = itemView.findViewById(R.id.tvUserFoodListNOVAScoreLabel);
+        tvUserFoodListFoodNOVAScoreLabel.setText(userFoodList.getUserFoodItemNOVAScore());
 
         //
-        //UPDATE THIS TO INCLUDE THE NEWLY ADDED LIST ITEMS
+        //ADD IMAGES UPDATE HERE
         //
+
 
         // POTENTIALLY INCLUDE IMAGE VIEW IN HERE, IGNORE FOR NOW
         // DO IMAGE VIEW WHEN THE API IS INTEGRATED AND THE IMAGE NEEDS TO UPDATE USING API
@@ -72,15 +85,11 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
     }
 
     class UserFoodListViewHolder extends RecyclerView.ViewHolder {
-        private View userFoodListItemView;
-        private UserFoodListRecyclerViewAdapter adapter;
 
-        public UserFoodListViewHolder(@NonNull View userFoodListItemView,UserFoodListRecyclerViewAdapter adapter) {
-            super(userFoodListItemView);
-            this.userFoodListItemView = userFoodListItemView;
-            this.adapter = adapter;
+        public UserFoodListViewHolder(@NonNull View itemView) {
+            super(itemView);
+
         }
-
 
     }
 }
