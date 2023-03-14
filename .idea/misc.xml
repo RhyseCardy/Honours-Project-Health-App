@@ -7,12 +7,13 @@
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/drawable/green_border.xml" value="0.3828125" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/drawable/ic_home.xml" value="0.3828125" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/drawable/yellow_border.xml" value="0.3828125" />
+        <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/activity_barcode_scanner.xml" value="0.33" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/food_info_fragment.xml" value="0.2554347826086957" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/food_list_item.xml" value="0.25" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/food_selection_fragment.xml" value="0.2554347826086957" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/fragment_about.xml" value="0.33" />
-        <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/fragment_barcode_scanner.xml" value="0.5" />
+        <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/fragment_barcode_scanner.xml" value="0.36528497409326427" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/fragment_food_info.xml" value="0.33" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/fragment_food_list.xml" value="0.33" />
         <entry key="..\:/Users/rhyse/AndroidStudioProjects/HonoursProjectHealthApp/app/src/main/res/layout/fragment_food_selection.xml" value="0.33" />

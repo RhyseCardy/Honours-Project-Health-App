@@ -1,14 +1,23 @@
 package mobileapp.development.honoursprojecthealthapp;
 
+
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.barcode.Barcode;
+import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,14 +26,6 @@ import android.widget.Button;
  */
 public class BarcodeScannerFragment extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public BarcodeScannerFragment() {
         // Required empty public constructor
@@ -42,8 +43,6 @@ public class BarcodeScannerFragment extends Fragment implements View.OnClickList
     public static BarcodeScannerFragment newInstance(String param1, String param2) {
         BarcodeScannerFragment fragment = new BarcodeScannerFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,10 +50,7 @@ public class BarcodeScannerFragment extends Fragment implements View.OnClickList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -69,8 +65,11 @@ public class BarcodeScannerFragment extends Fragment implements View.OnClickList
         Button btnScan = view.findViewById(R.id.btnScan);
         btnScan.setOnClickListener(this);
 
+
         return view;
     }
+
+
 
     @Override
     public void onClick(View v) {

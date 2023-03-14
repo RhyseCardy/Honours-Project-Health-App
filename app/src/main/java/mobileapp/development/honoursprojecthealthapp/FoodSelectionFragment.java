@@ -94,7 +94,7 @@ public class FoodSelectionFragment extends Fragment implements View.OnClickListe
             args.putString("foodItemName", FoodItemName);
 
             Navigation.findNavController(v).navigate
-                    (R.id.action_foodSelectionFragment_to_foodInfoFragment);
+                    (R.id.action_foodSelectionFragment_to_foodInfoFragment, args);
         }
     }
 }

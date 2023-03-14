@@ -28,6 +28,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import mobileapp.development.honoursprojecthealthapp.data.FoodItemsDatabase;
@@ -78,7 +79,6 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    //foodItemName IS TO BE USED WHEN API LINK IS ESTABLISHED AND DATA IS ADDED TO DATABASE AND RETRIEVED
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -101,7 +101,9 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
         Button btnAddToUserList = view.findViewById(R.id.btnAddToUserList);
         btnAddToUserList.setOnClickListener(this);
 
+        //get the suitable / candidate locations from the web service
         Uri uri = Utils.buildUri("https://world.openfoodfacts.org/cgi/search.pl?","search_terms", mFoodItemName, "json", "1");
+
 
         Log.d(TAG, "onViewCreated: " + uri.toString());
 
@@ -130,23 +132,42 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                             //
                             //REMEMBER TO UPDATE THE IMAGE, DO THIS LATER!!!!
                             //
+                            Log.d(TAG, "food item info" + foodItemObj);
 
 
                             //add the food item information to foodInfo using API variable names
                             String foodName = foodItemObj.getString("product_name");
 
+                            Log.d(TAG, "Food name Info" + foodName);
+
+
                             String foodAllergens = foodItemObj.getString("allergens_from_ingredients");
+
+                            Log.d(TAG, "Food Allergens Info" + foodAllergens);
 
 
                             JSONArray ingredientsVeganArrayObj = foodItemObj.getJSONArray("ingredients");
 
+                            Log.d(TAG, "Food Vegan Info" + ingredientsVeganArrayObj);
+
+
 
                             JSONArray ingredientsVegetarianArrayObj = foodItemObj.getJSONArray("ingredients");
+
+                            Log.d(TAG, "Food Vegetarian Info" + ingredientsVeganArrayObj);
+
 
 
                             String foodNUTRIScore = foodItemObj.getString("nutriscore_grade");
 
+                            Log.d(TAG, "Food NUTRIScore Info" + foodNUTRIScore);
+
+
+
                             int foodNOVAScore = foodItemObj.getInt("nova_group");
+
+                            Log.d(TAG, "Food NOVAScore Info" + foodNOVAScore);
+
 
                             // Ingredients are put into an array to find how many of them are vegan friendly
                             for (int i = 0, j = ingredientsVeganArrayObj.length(); i < j; i++) {
@@ -155,11 +176,13 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                                 ingredientsVeganArray.add(vegan);
                             }
 
+
+
                             // Ingredients are put into an array to find how many of them are vegetarian friendly
                             for (int i = 0, j = ingredientsVegetarianArrayObj.length(); i < j; i++) {
                                 JSONObject vegetarianObj = ingredientsVegetarianArrayObj.getJSONObject(i);
                                 String vegetarian = vegetarianObj.getString("vegetarian");
-                                ingredientsVeganArray.add(vegetarian);
+                                ingredientsVegetarianArray.add(vegetarian);
                             }
 
                             // update text in the food item name text view
@@ -168,7 +191,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
 
                             // update text in the ingredient vegan information text view
                             TextView tvFoodInfoVegan = view.findViewById(R.id.tvFoodInfoVegan);
-                            tvFoodInfoVegan.setText(ingredientsVeganArrayObj.toString());
+                            tvFoodInfoVegan.setText(ingredientsVeganArray.toString());
 
                             // update text in the ingredient vegetarian text view
                             TextView tvFoodInfoVegetarian = view.findViewById(R.id.tvFoodInfoVegetarian);
@@ -189,7 +212,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                             // log to make the sure the API data is successfully added and read
                             Log.d(TAG, foodName);
                             Log.d(TAG, foodAllergens);
-                            Log.d(TAG, String.valueOf(ingredientsVeganArrayObj));
+                            Log.d(TAG, String.valueOf(ingredientsVeganArray));
                             Log.d(TAG, String.valueOf(ingredientsVegetarianArray));
                             Log.d(TAG, String.valueOf(foodNOVAScore));
                             Log.d(TAG, foodNUTRIScore);
@@ -202,8 +225,8 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                                     ufi.setUserFoodItemName(foodName);
                                     ufi.setUserFoodItemAllergens(foodAllergens);
                                     ufi.setUserFoodItemNOVAScore(String.valueOf(foodNOVAScore));
-                                    ufi.setUserFoodItemVegan(String.valueOf(ingredientsVeganArrayObj));
-                                    ufi.setUserFoodItemVegetarian(String.valueOf(ingredientsVegetarianArrayObj));
+                                    ufi.setUserFoodItemVegan(String.valueOf(ingredientsVeganArray));
+                                    ufi.setUserFoodItemVegetarian(String.valueOf(ingredientsVegetarianArray));
                                     ufi.setUserFoodItemNUTRIScore(foodNUTRIScore);
                                     userFoodLists.add(ufi);
 

@@ -51,9 +51,9 @@
 
 
     <!-- Food List Fragment -->
-        <string name="etEnterFoodItem2">Home</string>
-        <string name="btnGoToFoodList2">Search</string>
-        <string name="rv_foodList">User List</string>
+    <string name="etEnterFoodItem2">Home</string>
+    <string name="btnGoToFoodList2">Search</string>
+    <string name="rv_foodList">User List</string>
 
     <!-- User Food List Item Fragment -->
     <string name="tvUserFoodListNameLabel"></string>
@@ -72,16 +72,20 @@
 
 
     <!-- Barcode Scanner Fragment -->
-        <string name="tvScanFoodItemLabel">Scan Food Item</string>
-        <string name="tvScanBarcodeInfoLabel">Scan a barcode to be instantly sent to that products Info Page</string>
-        <string name="btnScan">Scan</string>
-        <string name="btnReverseCam">Reverse Camera</string>
-        <string name="btnCancelCam">Cancel</string>
-        <string name="ivRoundRectangleScanner">rounded rectangle on Barcode Scanner Page</string>
-        <string name="ivBlackRectangleScanner">black rectangle on Barcode Scanner Page</string>
-        <string name="ivCameraScanner">Reverse Camera Icon</string>
-        <string name="ivCancelScanner">Cancel Scanner Icon</string>
-        <string name="ivScanScanner">Scan Icon</string>
+    <string name="tvScanFoodItemLabel">Scan Food Item</string>
+    <string name="tvScanBarcodeInfoLabel">Scan a barcode to be instantly sent to that products Info Page</string>
+    <string name="btnScan">Scan</string>
+    <string name="btnReverseCam">Reverse Camera</string>
+    <string name="btnCancelCam">Cancel</string>
+    <string name="ivRoundRectangleScanner">rounded rectangle on Barcode Scanner Page</string>
+    <string name="ivBlackRectangleScanner">black rectangle on Barcode Scanner Page</string>
+    <string name="ivCameraScanner">Reverse Camera Icon</string>
+    <string name="ivCancelScanner">Cancel Scanner Icon</string>
+    <string name="ivScanScanner">Scan Icon</string>
+    <string name="tvBarcodeText">Barcode Text</string>
+    <string name="btnCamera">Camera</string>
+    <string name="btnGallery">Gallery</string>
+
 
 
     <!-- Error Message For API -->
