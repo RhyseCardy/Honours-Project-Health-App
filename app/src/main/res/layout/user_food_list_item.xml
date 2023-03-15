@@ -38,10 +38,11 @@
         android:id="@+id/ivUserFoodListImage"
         android:layout_width="168dp"
         android:layout_height="181dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/ivUserFoodListImage"
         android:src="@drawable/food_item_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

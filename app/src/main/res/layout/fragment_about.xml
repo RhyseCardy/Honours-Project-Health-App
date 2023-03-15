@@ -13,7 +13,7 @@
         android:id="@+id/tvAppCollectInfoLabel"
         android:layout_width="263dp"
         android:layout_height="32dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/big_yellow_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvAppCollectInfoLabel"
@@ -22,7 +22,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +30,7 @@
         android:id="@+id/tvAppCollectInfoAnswerLabel"
         android:layout_width="343dp"
         android:layout_height="67dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/big_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvAppCollectInfoAnswerLabel"
@@ -38,6 +38,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAppCollectInfoLabel" />
 
@@ -45,7 +46,7 @@
         android:id="@+id/tvNutritScoreLabel"
         android:layout_width="228dp"
         android:layout_height="32dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/big_yellow_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvNutritScoreLabel"
@@ -54,13 +55,14 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAppCollectInfoAnswerLabel" />
 
     <TextView
         android:id="@+id/tvNutritScoreAnswerLabel"
-        android:layout_width="372dp"
-        android:layout_height="92dp"
+        android:layout_width="340dp"
+        android:layout_height="93dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/big_rounded_rectangle"
         android:gravity="center"
@@ -69,7 +71,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNutritScoreLabel" />
 
@@ -77,7 +79,7 @@
         android:id="@+id/tvNovaScoreLabel"
         android:layout_width="237dp"
         android:layout_height="29dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/big_yellow_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvNovaScoreLabel"
@@ -86,7 +88,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNutritScoreAnswerLabel" />
 
@@ -102,6 +104,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNovaScoreLabel" />
 
@@ -109,7 +112,7 @@
         android:id="@+id/tvNovaScoreAnswer2Label"
         android:layout_width="337dp"
         android:layout_height="80dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/big_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvNovaScoreAnswer2Label"
@@ -117,7 +120,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNovaScoreAnswer1Label" />
 

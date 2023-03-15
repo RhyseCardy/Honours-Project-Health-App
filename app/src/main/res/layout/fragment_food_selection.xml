@@ -12,34 +12,35 @@
 
     <Button
         android:id="@+id/btnGoToBarcodeScanner"
-        android:layout_width="365dp"
-        android:layout_height="50dp"
+        android:layout_width="343dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="100dp"
         android:text="@string/btnGoToBarcodeScanner"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSearchBarcodeScannerLabel"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/etEnterFoodItem"
-        android:layout_width="406dp"
+        android:layout_width="346dp"
         android:layout_height="49dp"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/rounded_green_rectangle"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/dark_green_rounded_rectangle"
         android:ems="10"
+        android:gravity="center"
+        android:hint="@string/etEnterFoodItem"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/etEnterFoodItem"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:gravity="center"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSearchQuestionLabel" />
 
@@ -47,7 +48,9 @@
         android:id="@+id/tvSearchQuestionLabel"
         android:layout_width="342dp"
         android:layout_height="117dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
         android:background="@drawable/big_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvSearchQuestionLabel"
@@ -56,7 +59,7 @@
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,6 +76,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOrLabel" />
 
@@ -80,7 +84,7 @@
         android:id="@+id/tvOrLabel"
         android:layout_width="99dp"
         android:layout_height="64dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/round_orange"
         android:gravity="center"
         android:text="@string/tvOrLabel"
@@ -89,14 +93,15 @@
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEnterFoodItem"
         tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnGoToFoodList"
-        android:layout_width="108dp"
-        android:layout_height="68dp"
+        android:layout_width="94dp"
+        android:layout_height="60dp"
         android:text="@string/btnGoToFoodList"
         app:layout_constraintBottom_toBottomOf="@+id/etEnterFoodItem"
         app:layout_constraintEnd_toEndOf="@+id/etEnterFoodItem"

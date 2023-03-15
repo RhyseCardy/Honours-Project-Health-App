@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="@+id/ivRoundedRectangleScanner2"
         app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintStart_toStartOf="@+id/ivRoundedRectangleScanner2"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tvScanResult"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.554" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvScanResult"
         android:layout_width="360dp"
         android:layout_height="115dp"
         android:text="@string/tvBarcodeText"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="@+id/ivRoundedRectangleScanner2"
         app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="@+id/ivRoundedRectangleScanner2"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tvScanResult"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
