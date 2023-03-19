@@ -32,5 +32,13 @@ public class Utils {
         return uriBuilder.build();
     }
 
+    @NonNull
+    public static Uri buildUriBarcode(String base, String paramName, String paramValue) {
+        Uri healthApp= Uri.parse(base);
+        // create a URI Builder and add the parameter
+        Uri.Builder uriBuilder = healthApp.buildUpon();
+        uriBuilder.appendQueryParameter(paramName, paramValue);
+        return uriBuilder.build();
+    }
 
 }

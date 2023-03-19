@@ -39,6 +39,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -51,8 +57,18 @@ import com.google.mlkit.vision.barcode.BarcodeScanning;
 import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.common.InputImage;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
+
+import mobileapp.development.honoursprojecthealthapp.data.FoodItemsDatabase;
+import mobileapp.development.honoursprojecthealthapp.data.UserFoodList;
+import mobileapp.development.honoursprojecthealthapp.data.UserFoodListDAO;
+import mobileapp.development.honoursprojecthealthapp.data.Utils;
 
 public class BarcodeScannerActivity extends AppCompatActivity {
 
@@ -60,7 +76,14 @@ public class BarcodeScannerActivity extends AppCompatActivity {
     private Button btnGallery;
     private ImageView ivScannerImage;
     private Button btnScan2;
-    private TextView tvScanResult;
+    private TextView tvBarcodeFoodName;
+    private TextView tvBarcodeFoodAllergens;
+    private TextView tvBarcodeFoodVegan;
+    private TextView tvBarcodeFoodVegetarian;
+    private TextView tvBarcodeFoodNUTRIScore;
+    private TextView tvBarcodeFoodNOVAScore;
+
+    private static final String ARG_BARCODE_FOOD_ITEM_NAME = "barcodeFoodItemName";
 
     //Created to handle the result of the camera and gallery permissions in the onRequestPermissionResults function
     private static final int CAMERA_REQUEST_CODE = 100;
@@ -79,6 +102,13 @@ public class BarcodeScannerActivity extends AppCompatActivity {
 
     private static final String TAG = "MAIN_TAG";
 
+//    private static BarcodeScannerActivity newInstance(String barcodeFoodItemName) {
+//        BarcodeScannerActivity activity = new BarcodeScannerActivity();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_BARCODE_FOOD_ITEM_NAME, barcodeFoodItemName);
+//        activity.setIntent(args);
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +120,12 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         btnGallery = findViewById(R.id.btnGallery);
         ivScannerImage = findViewById(R.id.ivScannerImage);
         btnScan2 = findViewById(R.id.btnScan2);
-        tvScanResult = findViewById(R.id.tvScanResult);
+        tvBarcodeFoodName = findViewById(R.id.tvBarcodeFoodName);
+        tvBarcodeFoodAllergens = findViewById(R.id.tvBarcodeFoodAllergens);
+        tvBarcodeFoodVegan = findViewById(R.id.tvBarcodeFoodVegan);
+        tvBarcodeFoodVegetarian = findViewById(R.id.tvBarcodeFoodVegetarian);
+        tvBarcodeFoodNUTRIScore = findViewById(R.id.tvBarcodeFoodNUTRIScore);
+        tvBarcodeFoodNOVAScore = findViewById(R.id.tvBarcodeFoodNOVAScore);
 
         //Initialise the arrays of permissions to pick the image from the gallery or camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA , Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -152,6 +187,9 @@ public class BarcodeScannerActivity extends AppCompatActivity {
 
                     detectResultFromImage();
                 }
+
+
+
             }
         });
 
@@ -198,74 +236,238 @@ public class BarcodeScannerActivity extends AppCompatActivity {
 
             int valueType = barcode.getValueType();
 
-            switch (valueType){
-                case Barcode.TYPE_WIFI:{
+            Uri uri = Utils.buildUriBarcode("https://world.openfoodfacts.org/api/v2/search?","code", rawValue);
 
-                    // Used to get wifi related data
-                    Barcode.WiFi typeWiFi = barcode.getWifi();
+            Log.d(TAG, "Barcode API connection: " + uri.toString());
 
-                    // Used to get all the info about wifi
-                    String ssid = ""+ typeWiFi.getSsid();
-                    String password = ""+ typeWiFi.getPassword();
-                    String encryptionType = ""+ typeWiFi.getEncryptionType();
+            FoodItemsDatabase foodItemsDatabase = FoodItemsDatabase.getDatabase(getApplicationContext());
 
-                    // Log the outcome
-                    Log.d(TAG, "extractBarcodeQRCodeInfo ssid: "+ ssid);
-                    Log.d(TAG, "extractBarcodeQRCodeInfo password: "+ password);
-                    Log.d(TAG, "extractBarcodeQRCodeInfo encryptionType: "+ encryptionType);
+            UserFoodListDAO userFoodListDAO = foodItemsDatabase.userFoodListDAO();
 
-                    // Set the results to the textview
-                    tvScanResult.setText("TYPE: TYPE_WIFI \nssid: "+ ssid +"\npassword: "+password+"\nencryptionType"+encryptionType+"\nraw value: "+rawValue);
+            StringRequest request = new StringRequest(Request.Method.GET, uri.toString(),
+            new Response.Listener<String>() {
+
+                @Override
+                public void onResponse(String response) {
+                    Log.d(TAG, response);
+                    List<String> ingredientsVeganArray = new ArrayList<String>();
+                    List<String> ingredientsVegetarianArray = new ArrayList<String>();
+
+                    try {
+                        //convert response to JSON Object
+                        JSONObject rootObject = new JSONObject(response);
+                        JSONArray resultsObj = rootObject.getJSONArray("products");
+                        JSONObject foodItemObj = resultsObj.getJSONObject(0);
+
+
+                        //
+                        //REMEMBER TO UPDATE THE IMAGE, DO THIS LATER!!!!
+                        //
+                        Log.d(TAG, "food item info" + foodItemObj);
+
+
+                        //add the food item information to foodInfo using API variable names
+                        String foodName = foodItemObj.getString("product_name");
+
+                        Log.d(TAG, "Food name Info" + foodName);
+
+
+                        String foodAllergens = foodItemObj.getString("allergens_from_ingredients");
+
+                        Log.d(TAG, "Food Allergens Info" + foodAllergens);
+
+
+                        JSONArray ingredientsVeganArrayObj = foodItemObj.getJSONArray("ingredients");
+
+                        Log.d(TAG, "Food Vegan Info" + ingredientsVeganArrayObj);
+
+
+
+                        JSONArray ingredientsVegetarianArrayObj = foodItemObj.getJSONArray("ingredients");
+
+                        Log.d(TAG, "Food Vegetarian Info" + ingredientsVeganArrayObj);
+
+
+
+                        String foodNUTRIScore = foodItemObj.getString("nutriscore_grade");
+
+                        Log.d(TAG, "Food NUTRIScore Info" + foodNUTRIScore);
+
+
+
+                        int foodNOVAScore = foodItemObj.getInt("nova_group");
+
+                        Log.d(TAG, "Food NOVAScore Info" + foodNOVAScore);
+
+
+                        // Ingredients are put into an array to find how many of them are vegan friendly
+                        for (int i = 0, j = ingredientsVeganArrayObj.length(); i < j; i++) {
+                            JSONObject veganObj = ingredientsVeganArrayObj.getJSONObject(i);
+                            String vegan = veganObj.getString("vegan");
+                            ingredientsVeganArray.add(vegan);
+                        }
+
+
+
+                        // Ingredients are put into an array to find how many of them are vegetarian friendly
+                        for (int i = 0, j = ingredientsVegetarianArrayObj.length(); i < j; i++) {
+                            JSONObject vegetarianObj = ingredientsVegetarianArrayObj.getJSONObject(i);
+                            String vegetarian = vegetarianObj.getString("vegetarian");
+                            ingredientsVegetarianArray.add(vegetarian);
+                        }
+
+                        // update text in the food item name text view
+                        tvBarcodeFoodName.setText(foodName);
+
+
+                        // update text in the ingredient vegan information text view
+                        tvBarcodeFoodVegan.setText(ingredientsVeganArray.toString());
+
+                        // update text in the ingredient vegetarian text view
+                        tvBarcodeFoodVegetarian.setText(ingredientsVegetarianArray.toString());
+
+                        // update text in the food item's allergens information text view
+                        tvBarcodeFoodAllergens.setText(foodAllergens);
+
+                        // update text in the food item NUTRI Score text view
+                        tvBarcodeFoodNUTRIScore.setText(foodNUTRIScore);
+
+
+                        // update text in the food item NOVA Score text view
+                        tvBarcodeFoodNOVAScore.setText(String.valueOf(foodNOVAScore));
+
+                        // log to make the sure the API data is successfully added and read
+                        Log.d(TAG, foodName);
+                        Log.d(TAG, foodAllergens);
+                        Log.d(TAG, String.valueOf(ingredientsVeganArray));
+                        Log.d(TAG, String.valueOf(ingredientsVegetarianArray));
+                        Log.d(TAG, String.valueOf(foodNOVAScore));
+                        Log.d(TAG, foodNUTRIScore);
+
+                        // on click listener for button that sends the data to be read and displayed in the fav games fragment
+//                        btnAddToUserList.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//                                UserFoodList ufi = new UserFoodList();
+//                                ufi.setUserFoodItemName(foodName);
+//                                ufi.setUserFoodItemAllergens(foodAllergens);
+//                                ufi.setUserFoodItemNOVAScore(String.valueOf(foodNOVAScore));
+//                                ufi.setUserFoodItemVegan(String.valueOf(ingredientsVeganArray));
+//                                ufi.setUserFoodItemVegetarian(String.valueOf(ingredientsVegetarianArray));
+//                                ufi.setUserFoodItemNUTRIScore(foodNUTRIScore);
+//                                userFoodLists.add(ufi);
+//
+//                                userFoodListDAO.insert(userFoodLists);
+//                                int i = 0 ;
+//                                Navigation.findNavController(view).navigate(R.id.action_foodInfoFragment_to_userFoodListFragment);
+//                                Log.d(TAG, "onClick: "+ userFoodLists);
+//                            }
+//                        });
+
+                    } catch (JSONException e) {
+                        Toast.makeText(getApplicationContext(), getString(R.string.error_downloading_food_information), Toast.LENGTH_LONG);
+
+                    }
+
+
                 }
-                break;
-                case Barcode.TYPE_URL:{
-
-                    // Used to get url related data
-                    Barcode.UrlBookmark typeUrl = barcode.getUrl();
-
-                    // Used to get all the info about the url
-                    String title = ""+ typeUrl.getTitle();
-                    String url = ""+ typeUrl.getUrl();
-
-                    // Log the outcome
-                    Log.d(TAG, "extractBarcodeQRCodeInfo: TYPE_URL");
-                    Log.d(TAG, "extractBarcodeQRCodeInfo: title: "+title);
-                    Log.d(TAG, "extractBarcodeQRCodeInfo: url: "+url);
-
-                    // Set the results to the textview
-                    tvScanResult.setText("TYPE: TYPE_URL \ntitle: " + title + "\nurl: " + url + "\nraw value: " + rawValue);
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.error_downloading_food_information), Toast.LENGTH_LONG);
                 }
-
-                //
-                // EVERYTHING UNDER HERE NEEDS RE-ADJUSTED TO FIT THE PROJECT, POTENTIALLY ABOVE AS WELL!!!!!!!!!!!!!!
-                // REMEMBER THIS!!!!!!!!!!!!
-                //
-
-                break;
-                case Barcode.TYPE_EMAIL:{
-
-                    Barcode.Email typeEmail = barcode.getEmail();
-
-                    String address = ""+ typeEmail.getAddress();
-                    String body = ""+ typeEmail.getBody();
-                    String subject = ""+ typeEmail.getSubject();
-
-                    Log.d(TAG, "extractBarcodeQRCodeInfo: TYPE_EMAIL");
-                    Log.d(TAG, "extractBarcodeQRCodeInfo: address: "+ address);
-                    Log.d(TAG, "extractBarcodeQRCodeInfo: body: "+ body);
-                    Log.d(TAG, "extractBarcodeQRCodeInfo: subject: "+ subject);
-
-                    tvScanResult.setText("TYPE: TYPE_EMAIL \naddress: " + address + "\nbody: " + body + "\nsubject: "+ subject + "\nraw value: " + rawValue);
-                }
-                break;
-                default:{
-                    tvScanResult.setText("raw value " + rawValue);
-                }
-            }
-
+            });
+            // now the request is made
+            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+            queue.add(request);
 
         }
+
     }
+
+
+
+
+
+
+//            switch (valueType){
+//                case Barcode.TYPE_WIFI:{
+//
+//                    //
+//                    //
+//                    //FROM THIS POINT ONWARDS, CONNECT TEXT VIEWS TO API!!!!!!!!
+//                    //
+//                    //
+//
+//                    // Used to get wifi related data
+//                    Barcode.WiFi typeWiFi = barcode.getWifi();
+//
+//                    // Used to get all the info about wifi
+//                    String ssid = ""+ typeWiFi.getSsid();
+//                    String password = ""+ typeWiFi.getPassword();
+//                    String encryptionType = ""+ typeWiFi.getEncryptionType();
+//
+//                    // Log the outcome
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo ssid: "+ ssid);
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo password: "+ password);
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo encryptionType: "+ encryptionType);
+//
+//                    // Set the results to the textview
+//                    //tvScanResult.setText("TYPE: TYPE_WIFI \nssid: "+ ssid +"\npassword: "+password+"\nencryptionType"+encryptionType+"\nraw value: "+rawValue);
+//                }
+//                break;
+//                case Barcode.TYPE_URL:{
+//
+//                    // Used to get url related data
+//                    Barcode.UrlBookmark typeUrl = barcode.getUrl();
+//
+//                    // Used to get all the info about the url
+//                    String title = ""+ typeUrl.getTitle();
+//                    String url = ""+ typeUrl.getUrl();
+//
+//                    // Log the outcome
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo: TYPE_URL");
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo: title: "+title);
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo: url: "+url);
+//
+//                    // Set the results to the textview
+//                    //tvScanResult.setText("TYPE: TYPE_URL \ntitle: " + title + "\nurl: " + url + "\nraw value: " + rawValue);
+//                }
+//
+//                //
+//                // EVERYTHING UNDER HERE NEEDS RE-ADJUSTED TO FIT THE PROJECT, POTENTIALLY ABOVE AS WELL!!!!!!!!!!!!!!
+//                // REMEMBER THIS!!!!!!!!!!!!
+//                //
+//
+//                break;
+//                case Barcode.TYPE_EMAIL:{
+//
+//                    Barcode.Email typeEmail = barcode.getEmail();
+//
+//                    String address = ""+ typeEmail.getAddress();
+//                    String body = ""+ typeEmail.getBody();
+//                    String subject = ""+ typeEmail.getSubject();
+//
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo: TYPE_EMAIL");
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo: address: "+ address);
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo: body: "+ body);
+//                    Log.d(TAG, "extractBarcodeQRCodeInfo: subject: "+ subject);
+//
+//                    //tvScanResult.setText("TYPE: TYPE_EMAIL \naddress: " + address + "\nbody: " + body + "\nsubject: "+ subject + "\nraw value: " + rawValue);
+//                }
+//                break;
+//                default:{
+//                    //tvScanResult.setText("raw value " + rawValue);
+//                }
+//            }
+//
+//
+//        }
+//    }
+
+
+
+
 
     private void pickImageGallery(){
 

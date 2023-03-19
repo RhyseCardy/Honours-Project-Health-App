@@ -24,6 +24,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
  * Use the {@link BarcodeScannerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class BarcodeScannerFragment extends Fragment implements View.OnClickListener {
 
 

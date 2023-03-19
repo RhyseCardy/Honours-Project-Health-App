@@ -18,6 +18,9 @@
             android:id="@+id/action_foodSelectionFragment_to_foodInfoFragment"
             app:destination="@id/foodInfoFragment"
             app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_foodSelectionFragment_to_barcodeScannerActivity3"
+            app:destination="@id/barcodeScannerActivity3" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -54,10 +57,19 @@
         <action
             android:id="@+id/action_foodInfoFragment_to_userFoodListFragment"
             app:destination="@id/userFoodListFragment" />
+        <argument
+            android:name="foodItemName"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/userFoodListFragment"
         android:name="mobileapp.development.honoursprojecthealthapp.UserFoodListFragment"
         android:label="fragment_user_food_list"
         tools:layout="@layout/fragment_user_food_list" />
+    <activity
+        android:id="@+id/barcodeScannerActivity3"
+        android:name="mobileapp.development.honoursprojecthealthapp.BarcodeScannerActivity"
+        android:label="activity_barcode_scanner"
+        tools:layout="@layout/activity_barcode_scanner" />
 </navigation>

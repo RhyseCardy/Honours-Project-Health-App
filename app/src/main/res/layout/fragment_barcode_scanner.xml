@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF0CB"
-    tools:context=".BarcodeScannerFragment">
+    tools:context=".BarcodeScannerFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/ivRoundedRectangleScanner"
+        android:layout_width="405dp"
+        android:layout_height="582dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp"
+        android:contentDescription="@string/ivRoundRectangleScanner"
+        android:src="@drawable/big_rounded_vertical_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScanFoodItemLabel"
+        app:layout_constraintVertical_bias="0.854" />
+
+    <Button
+        android:id="@+id/btnGallery2"
+        android:layout_width="167dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/btnGallery"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScanFoodItemLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btnCamera2"
+        android:layout_width="167dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/btnCamera"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScanFoodItemLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="132dp"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:text="@string/btnScan"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivScannerImage2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/ivScannerImage2"
+        android:layout_width="356dp"
+        android:layout_height="395dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivRoundedRectangleScanner"
+        app:srcCompat="@drawable/big_rounded_border_rectangle" />
+
+    <Button
+        android:id="@+id/btnCancelScan"
+        android:layout_width="131dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:text="@string/btnCancelCam"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivScannerImage2"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/tvScanFoodItemLabel"
@@ -17,160 +91,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="69dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/big_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvScanFoodItemLabel"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnScan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ivRoundedRectangleScanner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginEnd="270dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/btnScan"
-        android:textSize="12sp"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/btnReverseCam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ivRoundedRectangleScanner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="146dp"
-        android:layout_marginEnd="171dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/btnReverseCam"
-        android:textSize="12sp" />
-
-    <Button
-        android:id="@+id/btnCancelScan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ivRoundedRectangleScanner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="243dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="9dp"
-        android:text="@string/btnCancelCam"
-        android:textSize="12sp"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/tvScanBarcodeInfoLabel"
-        android:layout_width="280dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/tvScanFoodItemLabel"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="69dp"
-        android:background="@drawable/big_rounded_rectangle"
-        android:gravity="center"
-        android:text="@string/tvScanBarcodeInfoLabel"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/ivRoundedRectangleScanner"
-        android:layout_width="wrap_content"
-        android:layout_height="493dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="115dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="123dp"
-        android:contentDescription="@string/ivRoundRectangleScanner"
-        android:src="@drawable/big_rounded_vertical_rectangle" />
-
-    <ImageView
-        android:id="@+id/ivCameraScanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ivRoundedRectangleScanner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="131dp"
-        android:layout_marginEnd="248dp"
-        android:layout_marginBottom="-81dp"
-        android:contentDescription="@string/ivCameraScanner"
-        android:src="@android:drawable/ic_menu_camera"
-        app:tint="#000000"
-        tools:ignore="ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/ivCancelScanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ivRoundedRectangleScanner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="275dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="62dp"
-        android:contentDescription="@string/ivCancelScanner"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        app:tint="#000000" />
-
-    <ImageView
-        android:id="@+id/ivScanScanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ivRoundedRectangleScanner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="85dp"
-        android:layout_marginEnd="294dp"
-        android:layout_marginBottom="60dp"
-        android:contentDescription="@string/ivScanScanner"
-        android:src="@android:drawable/ic_menu_slideshow"
-        app:tint="#000000"
-        tools:ignore="ImageContrastCheck" />
-
-    <SurfaceView
-        android:id="@+id/surfaceView"
-        android:layout_width="294dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/ivRoundedRectangleScanner"
-        android:layout_alignTop="@+id/ivRoundedRectangleScanner"
-        android:layout_alignEnd="@+id/ivRoundedRectangleScanner"
-        android:layout_alignBottom="@+id/ivRoundedRectangleScanner"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="100dp" />
-
-    <TextView
-        android:id="@+id/tvBarcodeText"
-        android:layout_width="139dp"
-        android:layout_height="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="188dp"
-        android:text="@string/tvBarcodeText"
-        android:textColor="#FF0000"
-        android:textSize="10sp" />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
