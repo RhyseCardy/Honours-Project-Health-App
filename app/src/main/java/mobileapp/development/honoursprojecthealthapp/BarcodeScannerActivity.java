@@ -78,10 +78,9 @@ public class BarcodeScannerActivity extends AppCompatActivity {
     private Button btnScan2;
     private TextView tvBarcodeFoodName;
     private TextView tvBarcodeFoodAllergens;
-    private TextView tvBarcodeFoodVegan;
-    private TextView tvBarcodeFoodVegetarian;
     private TextView tvBarcodeFoodNUTRIScore;
     private TextView tvBarcodeFoodNOVAScore;
+    private TextView tvBarcodeIngredientsAnalysis;
 
     private static final String ARG_BARCODE_FOOD_ITEM_NAME = "barcodeFoodItemName";
 
@@ -110,6 +109,9 @@ public class BarcodeScannerActivity extends AppCompatActivity {
 //
 //    }
 
+    List<UserFoodList> userFoodLists = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,10 +124,9 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         btnScan2 = findViewById(R.id.btnScan2);
         tvBarcodeFoodName = findViewById(R.id.tvBarcodeFoodName);
         tvBarcodeFoodAllergens = findViewById(R.id.tvBarcodeFoodAllergens);
-        tvBarcodeFoodVegan = findViewById(R.id.tvBarcodeFoodVegan);
-        tvBarcodeFoodVegetarian = findViewById(R.id.tvBarcodeFoodVegetarian);
         tvBarcodeFoodNUTRIScore = findViewById(R.id.tvBarcodeFoodNUTRIScore);
         tvBarcodeFoodNOVAScore = findViewById(R.id.tvBarcodeFoodNOVAScore);
+        tvBarcodeIngredientsAnalysis = findViewById(R.id.tvBarcodeIngredientsAnalysis);
 
         //Initialise the arrays of permissions to pick the image from the gallery or camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA , Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -250,8 +251,6 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     Log.d(TAG, response);
-                    List<String> ingredientsVeganArray = new ArrayList<String>();
-                    List<String> ingredientsVegetarianArray = new ArrayList<String>();
 
                     try {
                         //convert response to JSON Object
@@ -277,16 +276,9 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                         Log.d(TAG, "Food Allergens Info" + foodAllergens);
 
 
-                        JSONArray ingredientsVeganArrayObj = foodItemObj.getJSONArray("ingredients");
+                        String foodIngredientsAnalysis = foodItemObj.getString("ingredients_analysis_tags");
 
-                        Log.d(TAG, "Food Vegan Info" + ingredientsVeganArrayObj);
-
-
-
-                        JSONArray ingredientsVegetarianArrayObj = foodItemObj.getJSONArray("ingredients");
-
-                        Log.d(TAG, "Food Vegetarian Info" + ingredientsVeganArrayObj);
-
+                        Log.d(TAG, "Food Ingredients Tags" + foodIngredientsAnalysis);
 
 
                         String foodNUTRIScore = foodItemObj.getString("nutriscore_grade");
@@ -300,38 +292,20 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                         Log.d(TAG, "Food NOVAScore Info" + foodNOVAScore);
 
 
-                        // Ingredients are put into an array to find how many of them are vegan friendly
-                        for (int i = 0, j = ingredientsVeganArrayObj.length(); i < j; i++) {
-                            JSONObject veganObj = ingredientsVeganArrayObj.getJSONObject(i);
-                            String vegan = veganObj.getString("vegan");
-                            ingredientsVeganArray.add(vegan);
-                        }
 
-
-
-                        // Ingredients are put into an array to find how many of them are vegetarian friendly
-                        for (int i = 0, j = ingredientsVegetarianArrayObj.length(); i < j; i++) {
-                            JSONObject vegetarianObj = ingredientsVegetarianArrayObj.getJSONObject(i);
-                            String vegetarian = vegetarianObj.getString("vegetarian");
-                            ingredientsVegetarianArray.add(vegetarian);
-                        }
 
                         // update text in the food item name text view
                         tvBarcodeFoodName.setText(foodName);
 
 
-                        // update text in the ingredient vegan information text view
-                        tvBarcodeFoodVegan.setText(ingredientsVeganArray.toString());
-
-                        // update text in the ingredient vegetarian text view
-                        tvBarcodeFoodVegetarian.setText(ingredientsVegetarianArray.toString());
-
                         // update text in the food item's allergens information text view
                         tvBarcodeFoodAllergens.setText(foodAllergens);
 
+
+                        tvBarcodeIngredientsAnalysis.setText(foodIngredientsAnalysis);
+
                         // update text in the food item NUTRI Score text view
                         tvBarcodeFoodNUTRIScore.setText(foodNUTRIScore);
-
 
                         // update text in the food item NOVA Score text view
                         tvBarcodeFoodNOVAScore.setText(String.valueOf(foodNOVAScore));
@@ -339,30 +313,11 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                         // log to make the sure the API data is successfully added and read
                         Log.d(TAG, foodName);
                         Log.d(TAG, foodAllergens);
-                        Log.d(TAG, String.valueOf(ingredientsVeganArray));
-                        Log.d(TAG, String.valueOf(ingredientsVegetarianArray));
+                        Log.d(TAG, foodIngredientsAnalysis);
                         Log.d(TAG, String.valueOf(foodNOVAScore));
                         Log.d(TAG, foodNUTRIScore);
 
-                        // on click listener for button that sends the data to be read and displayed in the fav games fragment
-//                        btnAddToUserList.setOnClickListener(new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View view) {
-//                                UserFoodList ufi = new UserFoodList();
-//                                ufi.setUserFoodItemName(foodName);
-//                                ufi.setUserFoodItemAllergens(foodAllergens);
-//                                ufi.setUserFoodItemNOVAScore(String.valueOf(foodNOVAScore));
-//                                ufi.setUserFoodItemVegan(String.valueOf(ingredientsVeganArray));
-//                                ufi.setUserFoodItemVegetarian(String.valueOf(ingredientsVegetarianArray));
-//                                ufi.setUserFoodItemNUTRIScore(foodNUTRIScore);
-//                                userFoodLists.add(ufi);
-//
-//                                userFoodListDAO.insert(userFoodLists);
-//                                int i = 0 ;
-//                                Navigation.findNavController(view).navigate(R.id.action_foodInfoFragment_to_userFoodListFragment);
-//                                Log.d(TAG, "onClick: "+ userFoodLists);
-//                            }
-//                        });
+                        // on click listener for button that sends the data to be read and displayed in the user food items fragment
 
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), getString(R.string.error_downloading_food_information), Toast.LENGTH_LONG);
@@ -382,6 +337,9 @@ public class BarcodeScannerActivity extends AppCompatActivity {
             queue.add(request);
 
         }
+
+
+
 
     }
 
@@ -618,4 +576,5 @@ public class BarcodeScannerActivity extends AppCompatActivity {
 
         }
     }
+
 }

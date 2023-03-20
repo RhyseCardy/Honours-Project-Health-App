@@ -8,31 +8,16 @@
 
     <TextView
         android:id="@+id/tvUserFoodListNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="216dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
         android:text="@string/tvUserFoodListNameLabel"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivUserFoodListImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Coca-Cola Zero 330ml" />
-
-    <TextView
-        android:id="@+id/tvUserFoodListVeganLabel"
-        android:layout_width="375dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/tvUserFoodListVeganLabel"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListAllergensLabel"
-        tools:text="Maybe" />
 
     <ImageView
         android:id="@+id/ivUserFoodListImage"
@@ -47,58 +32,57 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvUserFoodListVegetarianLabel"
-        android:layout_width="375dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/tvFoodInfoVegetarian"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListVeganLabel"
-        tools:text="Maybe" />
-
-    <TextView
         android:id="@+id/tvUserFoodListNUTRIScoreLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="67dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/tvUserFoodListNUTRIScoreLabel"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListVegetarianLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListIngredientsAnalysisLabel"
         tools:text="b" />
 
     <TextView
         android:id="@+id/tvUserFoodListNOVAScoreLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="67dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/tvUserFoodListNOVAScoreLabel"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListNUTRIScoreLabel"
         tools:text="4" />
 
     <TextView
         android:id="@+id/tvUserFoodListAllergensLabel"
-        android:layout_width="394dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="209dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="8dp"
         android:text="@string/tvUserFoodListAllergensLabel"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListNameLabel"
         tools:text="carbonated water, colour (caramel e150d), acid (phosphoric acid), sweeteners (aspartame, acesulfame k), natural flavourings (including caffeine), acidity regulator (sodium citrates) contains a source of phenylalanine" />
+
+    <TextView
+        android:id="@+id/tvUserFoodListIngredientsAnalysisLabel"
+        android:layout_width="194dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tvUserFoodListIngredientsAnalysis"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListAllergensLabel"
+        tools:text="[en:gluten_free, en: maybe_vegan, en: maybe_vegetarian ]" />
 </androidx.constraintlayout.widget.ConstraintLayout>

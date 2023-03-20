@@ -10,6 +10,21 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:id="@+id/tvIngredientsAnalysis"
+        android:layout_width="136dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoIngredientsAnalysisLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoAllergens"
+        tools:text="Ingredients Analysis:" />
+
     <Button
         android:id="@+id/btnGoToAbout"
         android:layout_width="wrap_content"
@@ -52,8 +67,8 @@
 
     <TextView
         android:id="@+id/tvFoodInfoAllergensLabel"
-        android:layout_width="143dp"
-        android:layout_height="49dp"
+        android:layout_width="135dp"
+        android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/tvFoodInfoAllergensLabel"
@@ -68,7 +83,7 @@
         android:layout_width="217dp"
         android:layout_height="64dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="20dp"
         android:textColor="#000000"
         android:textSize="8sp"
         android:textStyle="bold"
@@ -79,87 +94,31 @@
         tools:text="Allergens From Ingredients:" />
 
     <TextView
-        android:id="@+id/tvFoodInfoVeganLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/tvFoodInfoVeganLabel"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoAllergensLabel" />
-
-    <TextView
-        android:id="@+id/tvFoodInfoVegan"
-        android:layout_width="175dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoVeganLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoAllergens"
-        tools:text="Vegan?:" />
-
-    <TextView
-        android:id="@+id/tvFoodInfoVegetarianLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/tvFoodInfoVegetarianLabel"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVeganLabel" />
-
-    <TextView
-        android:id="@+id/tvFoodInfoVegetarian"
-        android:layout_width="176dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tvFoodInfoVegetarianLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVegan"
-        tools:text="Vegetarian?:" />
-
-    <TextView
         android:id="@+id/tvFoodInfoNUTRIScoreLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:text="@string/tvFoodInfoNUTRIScoreLabel"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVegetarianLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoIngredientsAnalysisLabel" />
 
     <TextView
         android:id="@+id/tvFoodInfoNUTRIScore"
         android:layout_width="104dp"
         android:layout_height="26dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:textColor="#000000"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvFoodInfoNUTRIScoreLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoVegetarian"
+        app:layout_constraintTop_toBottomOf="@+id/tvIngredientsAnalysis"
         tools:text="Nutrition Score:" />
 
     <TextView
@@ -182,7 +141,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
         android:textColor="#000000"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -212,5 +171,17 @@
         app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoNOVAScoreLabel" />
+
+    <TextView
+        android:id="@+id/tvFoodInfoIngredientsAnalysisLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/tvFoodInfoIngredientsAnalysisLabel"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFoodInfoAllergensLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

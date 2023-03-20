@@ -38,6 +38,7 @@
     <string name="tvFoodInfoNameLabel">Name:</string>
     <string name="tvFoodInfoAllergensLabel">Allergens From Ingredients:</string>
     <string name="tvFoodInfoVeganLabel">Vegan?:</string>
+    <string name="tvFoodInfoIngredientsAnalysisLabel">Ingredients Analysis:</string>
     <string name="tvFoodInfoVegetarianLabel">Vegetarian?:</string>
     <string name="tvFoodInfoNUTRIScoreLabel">Nutrition Score:</string>
     <string name="tvFoodInfoNOVAScoreLabel">NOVA Score:</string>
@@ -48,6 +49,7 @@
     <string name="tvFoodInfoVegetarian">%1$s</string>
     <string name="tvFoodInfoNUTRIScore">%1$s</string>
     <string name="tvFoodInfoNOVAScore">%1$s</string>
+    <string name="tvIngredientsAnalysis">%1$s</string>
 
 
     <!-- Food List Fragment -->
@@ -63,6 +65,8 @@
     <string name="tvUserFoodListNUTRIScoreLabel"></string>
     <string name="tvUserFoodListNOVAScoreLabel"></string>
     <string name="tvUserFoodListAllergensLabel"></string>
+    <string name="tvUserFoodListIngredientsAnalysis"></string>
+
 
 
     <!-- User Food List Fragment -->
@@ -86,7 +90,7 @@
     <string name="tvBarcodeText">Barcode Text</string>
     <string name="btnCamera">Camera</string>
     <string name="btnGallery">Gallery</string>
-    <string name="btnGoToBarcodeFoodInfo">Food Information</string>
+    <string name="btnBarcodeAddToUserList">Go To User List</string>
 
 
 

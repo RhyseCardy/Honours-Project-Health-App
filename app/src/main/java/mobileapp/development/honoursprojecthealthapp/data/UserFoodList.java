@@ -21,6 +21,8 @@ public class UserFoodList {
 
     private String userFoodItemNOVAScore;
 
+    private String userFoodItemIngredientsAnalysis;
+
 
     public int getUid() {return uid;}
 
@@ -95,6 +97,12 @@ public class UserFoodList {
         this.userFoodItemNOVAScore = userFoodItemNOVAScore;
     }
 
+    public String getUserFoodItemIngredientsAnalysis() {return userFoodItemIngredientsAnalysis; }
+
+    public void setUserFoodItemIngredientsAnalysis(String userFoodItemIngredientsAnalysis) {
+        this.userFoodItemIngredientsAnalysis = userFoodItemIngredientsAnalysis;
+    }
+
 
     @Override
     public String toString() {
@@ -106,6 +114,7 @@ public class UserFoodList {
                 ", userFoodItemVegetarian=" + userFoodItemVegetarian +
                 ", userFoodItemNUTRIScore=" + userFoodItemNUTRIScore +
                 ", userFoodItemNOVAScore=" + userFoodItemNOVAScore +
+                ", userFoodItemIngredientsAnalysis=" + userFoodItemIngredientsAnalysis +
                 "}";
     }
 

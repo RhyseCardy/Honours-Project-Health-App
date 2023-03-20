@@ -53,14 +53,6 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
         TextView tvUserFoodListAllergensLabel = itemView.findViewById(R.id.tvUserFoodListAllergensLabel);
         tvUserFoodListAllergensLabel.setText(userFoodList.getUserFoodItemAllergens());
 
-        // update the vegan info of food item
-        TextView tvUserFoodListVeganLabel = itemView.findViewById(R.id.tvUserFoodListVeganLabel);
-        tvUserFoodListVeganLabel.setText(userFoodList.getUserFoodItemVegan());
-
-        // update the vegetarian info of food item
-        TextView tvUserFoodListVegetarianLabel = itemView.findViewById(R.id.tvUserFoodListVegetarianLabel);
-        tvUserFoodListVegetarianLabel.setText(userFoodList.getUserFoodItemVegetarian());
-
         // update the NUTRI score of food item
         TextView tvUserFoodListFoodNUTRIScoreLabel = itemView.findViewById(R.id.tvUserFoodListNUTRIScoreLabel);
         tvUserFoodListFoodNUTRIScoreLabel.setText(userFoodList.getUserFoodItemNUTRIScore());
@@ -68,6 +60,9 @@ public class UserFoodListRecyclerViewAdapter  extends RecyclerView.Adapter<UserF
         // update the NOVA score of food item
         TextView tvUserFoodListFoodNOVAScoreLabel = itemView.findViewById(R.id.tvUserFoodListNOVAScoreLabel);
         tvUserFoodListFoodNOVAScoreLabel.setText(userFoodList.getUserFoodItemNOVAScore());
+
+        TextView tvUserFoodListIngredientsAnalysisLabel = itemView.findViewById(R.id.tvUserFoodListIngredientsAnalysisLabel);
+        tvUserFoodListIngredientsAnalysisLabel.setText(userFoodList.getUserFoodItemIngredientsAnalysis());
 
         //
         //ADD IMAGES UPDATE HERE

@@ -51,14 +51,15 @@
 
     <Button
         android:id="@+id/btnScan2"
-        android:layout_width="175dp"
-        android:layout_height="45dp"
+        android:layout_width="142dp"
+        android:layout_height="47dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16dp"
         android:text="@string/btnScan"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBarcodeNOVAScoreLabel"
         tools:ignore="TouchTargetSizeCheck" />
@@ -88,19 +89,6 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/tvBarcodeVeganLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/tvFoodInfoVeganLabel"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeAllergensLabel" />
-
-    <TextView
         android:id="@+id/tvBarcodeNOVAScoreLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,26 +106,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/tvFoodInfoNameLabel"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivScannerImage" />
-
-    <TextView
-        android:id="@+id/tvBarcodeVegetarianLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/tvFoodInfoVegetarianLabel"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeVeganLabel" />
 
     <TextView
         android:id="@+id/tvBarcodeAllergensLabel"
@@ -157,39 +132,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/tvFoodInfoNUTRIScoreLabel"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeVegetarianLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeIngredientsAnalysisLabel" />
 
     <TextView
         android:id="@+id/tvBarcodeFoodNUTRIScore"
         android:layout_width="119dp"
         android:layout_height="38dp"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvBarcodeNUTRIScoreLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodVegetarian"
+        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeIngredientsAnalysis"
         tools:text="Nutrition Score:" />
-
-    <TextView
-        android:id="@+id/tvBarcodeFoodVegan"
-        android:layout_width="175dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#000000"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvBarcodeVeganLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodAllergens"
-        tools:text="Vegan?:" />
 
     <TextView
         android:id="@+id/tvBarcodeFoodNOVAScore"
@@ -218,23 +180,10 @@
         tools:text="Allergens From Ingredients:" />
 
     <TextView
-        android:id="@+id/tvBarcodeFoodVegetarian"
-        android:layout_width="176dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#000000"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvBarcodeVegetarianLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodVegan"
-        tools:text="Vegetarian?:" />
-
-    <TextView
         android:id="@+id/tvBarcodeFoodName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -243,5 +192,39 @@
         app:layout_constraintStart_toEndOf="@+id/tvBarcodeNameLabel"
         app:layout_constraintTop_toBottomOf="@+id/ivScannerImage"
         tools:text="Name:" />
+
+    <Button
+        android:id="@+id/btnBarcodeAddToUserList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnBarcodeAddToUserList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnScan2"
+        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodNOVAScore" />
+
+    <TextView
+        android:id="@+id/tvBarcodeIngredientsAnalysis"
+        android:layout_width="174dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvBarcodeIngredientsAnalysisLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodAllergens"
+        tools:text="Ingredients Analysis:" />
+
+    <TextView
+        android:id="@+id/tvBarcodeIngredientsAnalysisLabel"
+        android:layout_width="119dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tvFoodInfoIngredientsAnalysisLabel"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeAllergensLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
