@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +43,7 @@ import mobileapp.development.honoursprojecthealthapp.data.Utils;
  * create an instance of this fragment.
  */
 public class FoodInfoFragment extends Fragment implements View.OnClickListener {
+
 
 
     private static final String TAG = "FoodItemFrag";
@@ -132,6 +135,10 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                             Log.d(TAG, "food item info" + foodItemObj);
 
 
+                            String foodImage = foodItemObj.getString("image_front_small_url");
+
+                            Log.d(TAG, "Food image Info" + foodImage);
+
                             //add the food item information to foodInfo using API variable names
                             String foodName = foodItemObj.getString("product_name");
 
@@ -168,6 +175,8 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                             TextView tvFoodInfoName = view.findViewById(R.id.tvFoodInfoName);
                             tvFoodInfoName.setText(foodName);
 
+                            ImageView ivFoodInfoImage = view.findViewById(R.id.ivFoodInfoImage);
+                            Glide.with(getContext()).load(foodImage).into(ivFoodInfoImage);
 
                             // update text in the food item's allergens information text view
                             TextView tvFoodInfoAllergens = view.findViewById(R.id.tvFoodInfoAllergens);
@@ -190,6 +199,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                             Log.d(TAG, String.valueOf(foodNOVAScore));
                             Log.d(TAG, foodNUTRIScore);
                             Log.d(TAG, foodIngredientsTags);
+                            Log.d(TAG, foodImage);
 
                             // on click listener for button that sends the data to be read and displayed in the fav games fragment
                             btnAddToUserList.setOnClickListener(new View.OnClickListener() {

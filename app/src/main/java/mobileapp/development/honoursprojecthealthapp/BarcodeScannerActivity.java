@@ -76,11 +76,7 @@ public class BarcodeScannerActivity extends AppCompatActivity {
     private Button btnGallery;
     private ImageView ivScannerImage;
     private Button btnScan2;
-    private TextView tvBarcodeFoodName;
-    private TextView tvBarcodeFoodAllergens;
-    private TextView tvBarcodeFoodNUTRIScore;
-    private TextView tvBarcodeFoodNOVAScore;
-    private TextView tvBarcodeIngredientsAnalysis;
+
 
     private static final String ARG_BARCODE_FOOD_ITEM_NAME = "barcodeFoodItemName";
 
@@ -122,11 +118,6 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         btnGallery = findViewById(R.id.btnGallery);
         ivScannerImage = findViewById(R.id.ivScannerImage);
         btnScan2 = findViewById(R.id.btnScan2);
-        tvBarcodeFoodName = findViewById(R.id.tvBarcodeFoodName);
-        tvBarcodeFoodAllergens = findViewById(R.id.tvBarcodeFoodAllergens);
-        tvBarcodeFoodNUTRIScore = findViewById(R.id.tvBarcodeFoodNUTRIScore);
-        tvBarcodeFoodNOVAScore = findViewById(R.id.tvBarcodeFoodNOVAScore);
-        tvBarcodeIngredientsAnalysis = findViewById(R.id.tvBarcodeIngredientsAnalysis);
 
         //Initialise the arrays of permissions to pick the image from the gallery or camera
         cameraPermissions = new String[]{Manifest.permission.CAMERA , Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -259,63 +250,82 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                         JSONObject foodItemObj = resultsObj.getJSONObject(0);
 
 
+
+
+
                         //
                         //REMEMBER TO UPDATE THE IMAGE, DO THIS LATER!!!!
                         //
                         Log.d(TAG, "food item info" + foodItemObj);
 
 
+
+//                        String barcodeFoodName = "Not Found";
+
+//                        String barcodeFoodName = "";
+//                        if (foodItemObj.has("product_name")){
+//                             barcodeFoodName = foodItemObj.getString("product_name");
+//
+//                        }
                         //add the food item information to foodInfo using API variable names
-                        String foodName = foodItemObj.getString("product_name");
-
-                        Log.d(TAG, "Food name Info" + foodName);
+                         String barcodeFoodName = foodItemObj.getString("product_name");
 
 
-                        String foodAllergens = foodItemObj.getString("allergens_from_ingredients");
-
-                        Log.d(TAG, "Food Allergens Info" + foodAllergens);
+                        Log.d(TAG, "Food name Info " + barcodeFoodName);
 
 
-                        String foodIngredientsAnalysis = foodItemObj.getString("ingredients_analysis_tags");
+//                        String barcodeFoodAllergens = "Not Found";
+                        String barcodeFoodAllergens = foodItemObj.getString("allergens_from_ingredients");
 
-                        Log.d(TAG, "Food Ingredients Tags" + foodIngredientsAnalysis);
-
-
-                        String foodNUTRIScore = foodItemObj.getString("nutriscore_grade");
-
-                        Log.d(TAG, "Food NUTRIScore Info" + foodNUTRIScore);
+                        Log.d(TAG, "Food Allergens Info " + barcodeFoodAllergens);
 
 
+//                        String barcodeFoodIngredientsAnalysis = "Not Found";
+                        String barcodeFoodIngredientsAnalysis = foodItemObj.getString("ingredients_analysis_tags");
 
-                        int foodNOVAScore = foodItemObj.getInt("nova_group");
+                        Log.d(TAG, "Food Ingredients Tags " + barcodeFoodIngredientsAnalysis);
 
-                        Log.d(TAG, "Food NOVAScore Info" + foodNOVAScore);
+
+//                        String barcodeFoodNUTRIScore = "Not Found";
+                        String barcodeFoodNUTRIScore = foodItemObj.getString("nutriscore_grade");
+
+
+                        Log.d(TAG, "Food NUTRIScore Info " + barcodeFoodNUTRIScore);
+
+
+//                        int barcodeFoodNOVAScore = 0;
+                        int barcodeFoodNOVAScore = foodItemObj.getInt("nova_group");
+
+                        Log.d(TAG, "Food NOVAScore Info" + barcodeFoodNOVAScore);
 
 
 
 
                         // update text in the food item name text view
-                        tvBarcodeFoodName.setText(foodName);
-
-
+                        TextView tvBarcodeFoodName = findViewById(R.id.tvBarcodeFoodName);
+                        tvBarcodeFoodName.setText(barcodeFoodName);
+//
                         // update text in the food item's allergens information text view
-                        tvBarcodeFoodAllergens.setText(foodAllergens);
+                        TextView tvBarcodeFoodAllergens = findViewById(R.id.tvBarcodeFoodAllergens);
+                        tvBarcodeFoodAllergens.setText(barcodeFoodAllergens);
 
-
-                        tvBarcodeIngredientsAnalysis.setText(foodIngredientsAnalysis);
+                        TextView tvBarcodeIngredientsAnalysis = findViewById(R.id.tvBarcodeIngredientsAnalysis);
+                        tvBarcodeIngredientsAnalysis.setText(barcodeFoodIngredientsAnalysis);
 
                         // update text in the food item NUTRI Score text view
-                        tvBarcodeFoodNUTRIScore.setText(foodNUTRIScore);
+                        TextView tvBarcodeFoodNUTRIScore = findViewById(R.id.tvBarcodeFoodNUTRIScore);
+                        tvBarcodeFoodNUTRIScore.setText(barcodeFoodNUTRIScore);
 
                         // update text in the food item NOVA Score text view
-                        tvBarcodeFoodNOVAScore.setText(String.valueOf(foodNOVAScore));
+                        TextView tvBarcodeFoodNOVAScore = findViewById(R.id.tvBarcodeFoodNOVAScore);
+                        tvBarcodeFoodNOVAScore.setText(String.valueOf(barcodeFoodNOVAScore));
 
                         // log to make the sure the API data is successfully added and read
-                        Log.d(TAG, foodName);
-                        Log.d(TAG, foodAllergens);
-                        Log.d(TAG, foodIngredientsAnalysis);
-                        Log.d(TAG, String.valueOf(foodNOVAScore));
-                        Log.d(TAG, foodNUTRIScore);
+                        Log.d(TAG, barcodeFoodName);
+                        Log.d(TAG, barcodeFoodAllergens);
+                        Log.d(TAG, barcodeFoodIngredientsAnalysis);
+                        Log.d(TAG, String.valueOf(barcodeFoodNOVAScore));
+                        Log.d(TAG, barcodeFoodNUTRIScore);
 
                         // on click listener for button that sends the data to be read and displayed in the user food items fragment
 

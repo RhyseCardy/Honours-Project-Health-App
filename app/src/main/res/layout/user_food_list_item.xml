@@ -7,36 +7,39 @@
     android:background="#FFF0CB">
 
     <TextView
-        android:id="@+id/tvUserFoodListNameLabel"
-        android:layout_width="216dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/tvUserFoodListNameLabel"
+        android:id="@+id/tvUserFoodListIngredientsAnalysisLabel"
+        android:layout_width="245dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="92dp"
+        android:text="@string/tvUserFoodListIngredientsAnalysis"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Coca-Cola Zero 330ml" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListAllergensLabel"
+        tools:text="[en:gluten_free, en: maybe_vegan, en: maybe_vegetarian ]" />
 
-    <ImageView
-        android:id="@+id/ivUserFoodListImage"
-        android:layout_width="168dp"
-        android:layout_height="181dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="@string/ivUserFoodListImage"
-        android:src="@drawable/food_item_placeholder"
+    <TextView
+        android:id="@+id/tvUserFoodListAllergensLabel"
+        android:layout_width="259dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/tvUserFoodListAllergensLabel"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.035"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListNameLabel"
+        tools:text="carbonated water, colour (caramel e150d), acid (phosphoric acid), sweeteners (aspartame, acesulfame k), natural flavourings (including caffeine), acidity regulator (sodium citrates) contains a source of phenylalanine" />
 
     <TextView
         android:id="@+id/tvUserFoodListNUTRIScoreLabel"
         android:layout_width="67dp"
         android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="160dp"
         android:text="@string/tvUserFoodListNUTRIScoreLabel"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -49,8 +52,8 @@
         android:id="@+id/tvUserFoodListNOVAScoreLabel"
         android:layout_width="67dp"
         android:layout_height="45dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="160dp"
         android:text="@string/tvUserFoodListNOVAScoreLabel"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -60,29 +63,16 @@
         tools:text="4" />
 
     <TextView
-        android:id="@+id/tvUserFoodListAllergensLabel"
-        android:layout_width="209dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/tvUserFoodListAllergensLabel"
+        android:id="@+id/tvUserFoodListNameLabel"
+        android:layout_width="289dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="52dp"
+        android:text="@string/tvUserFoodListNameLabel"
         android:textColor="#000000"
-        android:textSize="10sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListNameLabel"
-        tools:text="carbonated water, colour (caramel e150d), acid (phosphoric acid), sweeteners (aspartame, acesulfame k), natural flavourings (including caffeine), acidity regulator (sodium citrates) contains a source of phenylalanine" />
-
-    <TextView
-        android:id="@+id/tvUserFoodListIngredientsAnalysisLabel"
-        android:layout_width="194dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/tvUserFoodListIngredientsAnalysis"
-        android:textColor="#000000"
-        android:textSize="8sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserFoodListAllergensLabel"
-        tools:text="[en:gluten_free, en: maybe_vegan, en: maybe_vegetarian ]" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Coca-Cola Zero 330ml" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@ public class UserFoodList {
 
     private String userFoodItemName;
 
-    private int userFoodItemImage;
+    private String userFoodItemImage;
 
     private String userFoodItemAllergens;
 
@@ -47,11 +47,11 @@ public class UserFoodList {
         this.userFoodItemName = userFoodItemName;
     }
 
-    public int getUserFoodItemImage() {
+    public String getUserFoodItemImage() {
         return userFoodItemImage;
     }
 
-    public void setUserFoodItemImage(int userFoodItemImage) {
+    public void setUserFoodItemImage(String userFoodItemImage) {
         this.userFoodItemImage = userFoodItemImage;
     }
 

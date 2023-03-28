@@ -16,6 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScanFoodItemLabel2"
+        app:layout_constraintVertical_bias="0.921"
         app:srcCompat="@drawable/huge_rounded_vertical_rectangle" />
 
     <TextView
@@ -25,7 +27,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/big_rounded_rectangle"
         android:gravity="center"
         android:text="@string/tvScanFoodItemLabel"
@@ -33,7 +36,6 @@
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +43,6 @@
         android:id="@+id/ivScannerImage"
         android:layout_width="356dp"
         android:layout_height="395dp"
-        android:layout_marginTop="8dp"
         android:contentDescription="@string/ivScanScanner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -51,15 +52,15 @@
 
     <Button
         android:id="@+id/btnScan2"
-        android:layout_width="142dp"
-        android:layout_height="47dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/btnScan"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBarcodeNOVAScoreLabel"
         tools:ignore="TouchTargetSizeCheck" />
@@ -68,8 +69,8 @@
         android:id="@+id/btnCamera"
         android:layout_width="167dp"
         android:layout_height="47dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
         android:text="@string/btnCamera"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,8 +81,8 @@
         android:id="@+id/btnGallery"
         android:layout_width="167dp"
         android:layout_height="47dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/btnGallery"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/tvFoodInfoNUTRIScoreLabel"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -145,7 +146,7 @@
         android:layout_width="119dp"
         android:layout_height="38dp"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -173,7 +174,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:textColor="#000000"
-        android:textSize="8sp"
+        android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvBarcodeAllergensLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodName"
@@ -181,26 +182,17 @@
 
     <TextView
         android:id="@+id/tvBarcodeFoodName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_width="235dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintHorizontal_bias="0.808"
         app:layout_constraintStart_toEndOf="@+id/tvBarcodeNameLabel"
         app:layout_constraintTop_toBottomOf="@+id/ivScannerImage"
         tools:text="Name:" />
-
-    <Button
-        android:id="@+id/btnBarcodeAddToUserList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnBarcodeAddToUserList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnScan2"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodNOVAScore" />
 
     <TextView
         android:id="@+id/tvBarcodeIngredientsAnalysis"
@@ -209,7 +201,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="8dp"
         android:textColor="#000000"
-        android:textSize="8sp"
+        android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvBarcodeIngredientsAnalysisLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvBarcodeFoodAllergens"
