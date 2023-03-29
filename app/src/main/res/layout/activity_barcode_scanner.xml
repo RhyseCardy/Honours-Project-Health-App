@@ -7,6 +7,8 @@
     android:background="#FFF0CB"
     tools:context=".BarcodeScannerActivity">
 
+    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="398dp"
