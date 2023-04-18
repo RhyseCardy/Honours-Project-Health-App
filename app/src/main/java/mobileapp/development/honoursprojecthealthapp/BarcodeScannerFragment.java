@@ -25,7 +25,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
  * create an instance of this fragment.
  */
 
-public class BarcodeScannerFragment extends Fragment implements View.OnClickListener {
+public class BarcodeScannerFragment extends Fragment {
 
 
     public BarcodeScannerFragment() {
@@ -60,25 +60,8 @@ public class BarcodeScannerFragment extends Fragment implements View.OnClickList
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_barcode_scanner, container, false);
 
-        Button btnCancelScan = view.findViewById(R.id.btnCancelScan);
-        btnCancelScan.setOnClickListener(this);
-
-        Button btnScan = view.findViewById(R.id.btnScan);
-        btnScan.setOnClickListener(this);
-
 
         return view;
     }
 
-
-
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btnCancelScan) {
-            Navigation.findNavController(v).navigate(R.id.action_barcodeScannerFragment_to_foodSelectionFragment);
-        }
-        else if (v.getId() == R.id.btnScan) {
-            Navigation.findNavController(v).navigate(R.id.action_barcodeScannerFragment_to_foodInfoFragment);
-        }
-    }
 }
